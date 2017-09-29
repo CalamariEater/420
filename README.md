@@ -1,3 +1,3 @@
 # 420
 Project for 420
-Fuck bitches get money
+Make a game.
