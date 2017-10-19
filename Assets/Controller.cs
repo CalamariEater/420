@@ -11,12 +11,12 @@ public class Controller : MonoBehaviour {
 
 	public bool onGround = false;
 
-	public float playerOffset = 0.1f;
+	public float playerOffset = 0.1f; // For jump raycast
 
 	private int LayerGround;
-	public Vector2 groundStart;
-	public Vector2 groundEnd;
-	public float groundEndDist = 0.1f;
+	public Vector2 groundStart;	// For jump raycast
+	public Vector2 groundEnd;	// For jump raycast
+	public float groundEndDist = 0.1f;	// For jump raycast
 
 	//public float groundEndRay = -1.0f;
 
@@ -25,9 +25,9 @@ public class Controller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D> ();
-		cdr = GetComponent<Collider2D> ();
-		LayerGround = LayerMask.NameToLayer ("Ground");
+		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
+		cdr = GetComponent<Collider2D> (); //assign collider to 2d
+		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer from object
 		//playerOffset = GetComponent<SpriteRenderer> ().sprite.rect.size.x / 2;
 	}
 	
