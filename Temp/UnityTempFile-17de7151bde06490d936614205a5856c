@@ -3,8 +3,8 @@
 -nowarn:0169
 -out:'Temp/Assembly-CSharp-firstpass.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
--r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_3_5
@@ -95,6 +95,7 @@
 'Assets/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs'
 'Assets/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs'
 'Assets/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs'
+'Assets/Standard Assets/EmptyClass.cs'
 'Assets/Standard Assets/Utility/ActivateTrigger.cs'
 'Assets/Standard Assets/Utility/AlphaButtonClickMask.cs'
 'Assets/Standard Assets/Utility/AutoMobileShaderSwitch.cs'
