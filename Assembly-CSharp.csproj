@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Controller.cs" />
+     <Compile Include="Assets\MainMenu.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
