@@ -95,40 +95,14 @@ GameObject:
   - 4: {fileID: 221308426}
   - 212: {fileID: 221308425}
   - 50: {fileID: 221308424}
-  - 114: {fileID: 221308422}
   - 61: {fileID: 221308423}
   m_Layer: 0
-  m_Name: Baddie
+  m_Name: BaddieKeepAway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &221308422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 221308421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6759973e93f74bdcbd85e1c743e1b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
-  jump: 200
-  cdr: {fileID: 0}
-  rb: {fileID: 0}
-  yOffset: 0.1
-  onGround: 0
-  groundStart: {x: 0, y: 0}
-  groundEnd: {x: 0, y: 0}
-  groundEndDist: 0.1
-  xOffset: 1
-  tooClose: 0
-  keepAwayStart: {x: 0, y: 0}
-  keepAwayEnd: {x: 0, y: 0}
-  keepAwayEndDist: 0.1
 --- !u!61 &221308423
 BoxCollider2D:
   m_ObjectHideFlags: 0
