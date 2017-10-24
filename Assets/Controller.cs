@@ -77,7 +77,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 				if (groundHit.transform.gameObject.layer == LayerGround) {
 					onGround = true;
 					rb.AddForce (Vector2.up * jump); // Add impulse
-					//Debug.Log ("GROUNDED YO");
+					Debug.Log ("JUMP");
 				}
 			}
 

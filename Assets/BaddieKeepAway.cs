@@ -19,7 +19,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 
 	// For Keep Away Raycast
 	private int LayerPlayer;
-	public float xOffset = 1.0f; // Offset for baddie sprite
+	public float xOffset = 1.0f; // Offset for baddie sprite ~ distance TODO: change these var names its confusing
 	public bool tooClose = false;
 	public Vector2 keepAwayStart;
 	public Vector2 keepAwayEnd;
@@ -82,6 +82,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 			}
 		}
 	}
+
 
 //	void baddieJump() {	//TODO: Some condition to make baddie jump
 //		// Jump
