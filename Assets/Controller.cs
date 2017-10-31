@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	// For Jump Raycast
 	public bool onGround = false;
-	public float yOffset = 0.1f; // Offset for player sprite
+	public float yOffset = 0.1f; // Offset for player sprite ~ not dynamic
 	private int LayerGround;
 	public Vector2 groundStart;	// For jump raycast
 	public Vector2 groundEnd;	// For jump raycast
@@ -22,6 +22,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
+		rb.freezeRotation = true;
 
 	}
 	

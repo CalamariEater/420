@@ -31,7 +31,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
-
+		rb.freezeRotation = true;
 		// Create AI pattern TESTING
 
 
