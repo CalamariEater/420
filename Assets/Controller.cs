@@ -5,6 +5,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	public float speed = 2.0f;
 	public float jump = 200.0f;
+	public int hp = 10;
+	public bool doubleJump = false;
 
 	public Collider2D cdr;
 	public Rigidbody2D rb;
@@ -59,7 +61,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	void playerJump() {
 		// Jump
-		if (Input.GetKeyDown (KeyCode.W))  {
+		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown(KeyCode.Space))  {
 
 			// Set/update Raycast line
 			groundStart = transform.position;
@@ -99,5 +101,6 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 		Debug.DrawLine(groundStart, groundEnd, Color.green);
 	}
+
 
 }

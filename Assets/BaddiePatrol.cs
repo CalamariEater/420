@@ -18,9 +18,9 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	public Vector2 groundEnd;	// For jump raycast
 	public float groundEndDist = 0.1f;	// For jump raycast
 
-	// For Cliff Raycast TODO: Possibly rally point system instead of dynamic?
+	// For Cliff Raycast
 	private int LayerPlayer;
-	public float xOffset = 1.0f; // Offset for baddie sprite
+	public float xOffset = 0.5f; // Offset for baddie sprite ~ determines edge detection
 	//public float yCliffOffset = 3.0f; 
 	public bool tooClose = false;
 	public Vector2 cliffStart;
@@ -34,7 +34,7 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
-
+		rb.freezeRotation = true;
 
 
 	}
@@ -53,7 +53,7 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 
 	// Simple Baddie AI
 	void baddiePatrol(){
-		// Set/update Raycast line
+		// Determine if left side is cliff
 		cliffStart = transform.position;
 		cliffStart.x -= xOffset;
 		cliffEnd = transform.position;
@@ -63,17 +63,14 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		Debug.DrawLine(cliffStart, cliffEnd, Color.blue);
 		RaycastHit2D hit = Physics2D.Linecast(cliffStart, cliffEnd);
 
-		if (Physics2D.Linecast (cliffStart, cliffEnd)) {
-			if (hit.transform == null) {	// TODO: Not entering if
-				toTheRight = true;
-				Debug.Log ("To the windoooooOOOoOOoW");
-			}
-			if (hit.collider == true) {
-				Debug.Log ("I'm hitting shit");
-			}
-			//Debug.Log (hit.collider.name);
+		if (hit) {
+			// Do nothing
+		} else {
+			toTheRight = true;
+			Debug.Log ("To the windoooooOOOoOOoW");
 		}
 
+		// Determine if right side is cliff
 		cliffStart = transform.position;
 		cliffStart.x += xOffset;
 		cliffEnd = transform.position;
@@ -83,14 +80,12 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		Debug.DrawLine(cliffStart, cliffEnd, Color.blue);
 		hit = Physics2D.Linecast(cliffStart, cliffEnd);
 
-		if (Physics2D.Linecast (cliffStart, cliffEnd)) {
-			if (!hit) {
-				toTheRight = false;
-				//Debug.Log ("ON YOUR LEFT");
-			}
-			//Debug.Log (hit.collider.name);
+		if (hit) {
+		} else {
+			toTheRight = false;
 		}
 
+		// Actual movement
 		if (toTheRight) {
 			transform.position += Vector3.right * speed * Time.deltaTime; // Move baddie
 		} else {

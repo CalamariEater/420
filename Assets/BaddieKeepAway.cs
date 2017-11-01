@@ -31,7 +31,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
-
+		rb.freezeRotation = true;
 		// Create AI pattern TESTING
 
 
@@ -60,7 +60,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 		Debug.DrawLine(keepAwayStart, keepAwayEnd, Color.red);
 		RaycastHit2D playerIsClose = Physics2D.Linecast(keepAwayStart, keepAwayEnd);
 
-		if (Physics2D.Linecast (keepAwayStart, keepAwayEnd)) {
+		if (playerIsClose) {
 			if (playerIsClose.transform.gameObject.layer == LayerPlayer) {
 				transform.position += Vector3.right * speed * Time.deltaTime; // Move baddie away!
 				Debug.Log ("ON YOUR LEFT");
@@ -75,7 +75,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 		Debug.DrawLine(keepAwayStart, keepAwayEnd, Color.red);
 		playerIsClose = Physics2D.Linecast(keepAwayStart, keepAwayEnd);
 
-		if (Physics2D.Linecast (keepAwayStart, keepAwayEnd)) {
+		if (playerIsClose) {
 			if (playerIsClose.transform.gameObject.layer == LayerPlayer) {
 				transform.position += Vector3.left * speed * Time.deltaTime; // Move baddie away!
 				Debug.Log ("ON YOUR RIGHT");

@@ -60,7 +60,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		Debug.DrawLine(followStart, followEnd, Color.blue);
 		RaycastHit2D playerIsClose = Physics2D.Linecast(followStart, followEnd);
 
-		if (Physics2D.Linecast (followStart, followEnd)) {
+		if (playerIsClose) {
 			if (playerIsClose.transform.gameObject.layer == LayerPlayer) {
 				transform.position += Vector3.left * speed * Time.deltaTime; // Move baddie
 				//Debug.Log ("ON YOUR LEFT");
@@ -75,7 +75,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		Debug.DrawLine(followStart, followEnd, Color.blue);
 		playerIsClose = Physics2D.Linecast(followStart, followEnd);
 
-		if (Physics2D.Linecast (followStart, followEnd)) {
+		if (playerIsClose) {
 			if (playerIsClose.transform.gameObject.layer == LayerPlayer) {
 				transform.position += Vector3.right * speed * Time.deltaTime; // Move baddie
 				//Debug.Log ("ON YOUR RIGHT");
