@@ -32,8 +32,6 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
 		rb.freezeRotation = true;
-		// Create AI pattern TESTING
-
 
 	}
 	

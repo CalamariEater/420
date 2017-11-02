@@ -410,12 +410,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 794050291}
-  - 58: {fileID: 794050290}
   - 212: {fileID: 794050289}
+  - 58: {fileID: 794050290}
   - 114: {fileID: 794050288}
   m_Layer: 0
-  m_Name: PowaDoubleJump
-  m_TagString: Untagged
+  m_Name: PowaJumpMore
+  m_TagString: powa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 794050287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54704ee7e9e1844c29472e810d7fd9f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 75198d4511048451c9dc3d61862e771b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &794050289
@@ -470,11 +470,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4810572
+  m_Radius: 1.28
 --- !u!4 &794050291
 Transform:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ GameObject:
   - 50: {fileID: 926170732}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,8 @@ MonoBehaviour:
   speed: 2
   jump: 200
   hp: 10
-  doubleJump: 0
+  jumps: 0
+  jumpLimit: 2
   cdr: {fileID: 0}
   rb: {fileID: 0}
   onGround: 0

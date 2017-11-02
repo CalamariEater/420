@@ -67,7 +67,7 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 			// Do nothing
 		} else {
 			toTheRight = true;
-			Debug.Log ("To the windoooooOOOoOOoW");
+			//Debug.Log ("To the windoooooOOOoOOoW");
 		}
 
 		// Determine if right side is cliff

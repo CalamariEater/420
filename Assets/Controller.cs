@@ -6,7 +6,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public float speed = 2.0f;
 	public float jump = 200.0f;
 	public int hp = 10;
-	public bool doubleJump = false;
+	public int jumps = 0;
+	public int jumpLimit = 2;
 
 	public Collider2D cdr;
 	public Rigidbody2D rb;
@@ -76,16 +77,36 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			//Debug.Log ("LAYERGROUND: " + LayerGround);
 
 
-			if (Physics2D.Linecast (groundStart, groundEnd)) {
+//			if (groundHit) {
+//				if (groundHit.transform.gameObject.layer == LayerGround) {
+//					rb.AddForce (Vector2.up * jump); // Add impulse
+//					onGround = true;
+//					jumps++;
+//					//Debug.Log ("JUMP");
+//				}
+//			} else if (jumps < jumpLimit) {
+//				rb.AddForce (Vector2.up * jump); // Add impulse
+//				onGround = true;
+//				jumps++;
+//				Debug.Log ("DOOOUBLE JUMP");
+//			} else if (!groundHit) {
+//				jumps = 0;
+//				onGround = false;
+//				//Debug.Log ("GROUNDED NOOOOOOO");
+//			}
+
+			if (groundHit) {
 				if (groundHit.transform.gameObject.layer == LayerGround) {
 					onGround = true;
-					rb.AddForce (Vector2.up * jump); // Add impulse
-					Debug.Log ("JUMP");
+					jumps = 0;
 				}
-			}
-
-			onGround = false;
-			//Debug.Log ("GROUNDED NOOOOOOO");
+			} 
+			if (jumps < jumpLimit) {
+				rb.AddForce (Vector2.up * jump); // Add impulse
+				onGround = false;	// TODO: Mario style jump e.g adding impulse against gravity etc...
+				jumps++;
+				Debug.Log ("DOOOUBLE JUMP");
+			} 
 		}
 	}
 
