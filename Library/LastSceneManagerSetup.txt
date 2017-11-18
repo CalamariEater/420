@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/420BLAZEIT.unity
+- path: Assets/Debug.unity
   isLoaded: 1
   isActive: 1
