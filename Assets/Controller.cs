@@ -102,8 +102,11 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 				}
 			} 
 			if (jumps < jumpLimit) {
+				Vector2 v = rb.velocity;
+				v.y = 0.0f;	
+				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 				rb.AddForce (Vector2.up * jump); // Add impulse
-				onGround = false;	// TODO: Mario style jump e.g adding impulse against gravity etc...
+				onGround = false;	// TODO: Small bug where jumping doesnt register
 				jumps++;
 				Debug.Log ("DOOOUBLE JUMP");
 			} 

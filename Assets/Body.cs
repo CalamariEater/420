@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class Body : MonoBehaviour	// Might wanna do inheritance shit if im not too lazy
+public class Body : MonoBehaviour	// Should REALLY do inheritance shit
 {
 	public float speed = 2.0f;
 	public float jump = 200.0f;
