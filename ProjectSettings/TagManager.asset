@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - powa
+  - projectile
+  - baddieBod
   layers:
   - Default
   - TransparentFX

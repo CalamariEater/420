@@ -9,8 +9,9 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public int jumps = 0;
 	public int jumpLimit = 2;
 
-	public Collider2D cdr;
-	public Rigidbody2D rb;
+	private Collider2D cdr;
+	private Rigidbody2D rb;
+	private SpriteRenderer spr;
 
 	// For Jump Raycast
 	public bool onGround = false;
@@ -20,28 +21,47 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public Vector2 groundEnd;	// For jump raycast
 	public float groundEndDist = 0.1f;	// For jump raycast
 
+	// Bullet Stuff
+	public GameObject pewPrefab;
+	public Transform pewSpawnLeft;
+	public Transform pewSpawnRight;
+	public float pewSpeed = 3.0f;
+	public float pewDespawnRate = 2.0f;
+	public float pewFireRate = 0.5f;
+	public bool allowFire = true;
+
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
+		spr = GetComponent<SpriteRenderer>();
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		rb.freezeRotation = true;
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-
 
 	}
 
 	// Use for physics stuff
 	void FixedUpdate () {
 		playerMovement ();
-
+		playerFire ();
 	}
 
+	void OnCollisionEnter2D (Collision2D coll) {
+		if (coll.gameObject.tag == "baddieBod") {
+			Debug.Log ("ow");
+			StartCoroutine(flicker (2));
+
+			hp--;
+			if (hp <= 0) { // Death
+				Destroy(gameObject);
+			}
+		}
+	}
 
 	//*******************Helper Functions******************//
 
@@ -126,5 +146,64 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		Debug.DrawLine(groundStart, groundEnd, Color.green);
 	}
 
+	void playerFire() {
+		if (Input.GetKey (KeyCode.LeftArrow) && allowFire) {
+			//Debug.Log ("PEW");
+			//StopCoroutine (shootLeft ());
+			StartCoroutine (shootLeft ()); // Allows fire rate
+		} else if (Input.GetKey (KeyCode.RightArrow) && allowFire) {
+			StartCoroutine (shootRight ());
+		}
+	}
 
+	IEnumerator shootLeft() {
+		allowFire = false;
+
+		// Create pew from prefab
+		var pew = (GameObject)Instantiate (pewPrefab, pewSpawnLeft.position, pewSpawnLeft.rotation);
+
+		// Velocity to pew
+		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * -pewSpeed;
+
+		//Debug.Log ("Waiting for next shot...");
+
+		yield return new WaitForSeconds(pewFireRate);
+
+		// Destroy pew
+		Destroy(pew, pewDespawnRate);
+
+		allowFire = true;
+	}
+
+	IEnumerator shootRight() { // Possible enable disable? Seems pretty op
+		allowFire = false;
+
+		// Create pew from prefab
+		var pew = (GameObject)Instantiate (pewPrefab, pewSpawnRight.position, pewSpawnLeft.rotation);
+
+		// Velocity to pew
+		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * pewSpeed;
+
+		//Debug.Log ("Waiting for next shot...");
+
+		yield return new WaitForSeconds(pewFireRate);
+
+		// Destroy pew
+		Destroy(pew, pewDespawnRate);
+
+		allowFire = true;
+	}
+
+	IEnumerator flicker(int blink){
+		Color defaultColor = spr.color; // Save default color
+
+		for (int i = 0; i < blink; i++) {
+			spr.color = Color.red;
+			yield return new WaitForSeconds(0.1f);
+			spr.color = Color.white;
+			yield return new WaitForSeconds(0.1f);
+		}
+
+		spr.color = defaultColor;
+	}
 }

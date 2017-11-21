@@ -47,6 +47,13 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		baddieFollow ();
 	}
 
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "projectile") {
+			Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
+			Destroy (coll.gameObject);
+		}
+	}
+
 	//*******************Helper Functions******************//
 
 	// Simple Baddie AI
@@ -82,6 +89,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 			}
 		}
 	}
+
 
 
 	//	void baddieJump() {	//TODO: Some condition to make baddie jump

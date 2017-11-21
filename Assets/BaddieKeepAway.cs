@@ -45,6 +45,13 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 		baddieKeepAway ();
 	}
 
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "projectile") {
+			Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
+			Destroy (coll.gameObject);
+		}
+	}
+
 	//*******************Helper Functions******************//
 
 	// Simple Baddie AI

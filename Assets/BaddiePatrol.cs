@@ -4,11 +4,13 @@ using System.Collections;
 // Goomba style movement
 public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code clean up
 
+	public int hp = 10;
 	public float speed = 1.5f;
 	public float jump = 200.0f;
 
 	public Collider2D cdr;
 	public Rigidbody2D rb;
+	private SpriteRenderer spr;
 
 	// For Jump Raycast
 	private int LayerGround;
@@ -32,10 +34,10 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	void Start () {
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
+		spr = GetComponent<SpriteRenderer>();
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
 		rb.freezeRotation = true;
-
 
 	}
 
@@ -48,6 +50,20 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	void FixedUpdate(){
 		baddiePatrol ();
 	}
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "projectile") {
+			Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
+			Destroy (coll.gameObject);
+			StartCoroutine(flicker (2));
+
+			hp--;
+			if (hp <= 0) { // Death
+				Destroy(gameObject);
+			}
+		}
+	}
+		
 
 	//*******************Helper Functions******************//
 
@@ -70,7 +86,7 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 			//Debug.Log ("To the windoooooOOOoOOoW");
 		}
 
-		// Determine if right side is cliff
+		// Determine if right side is cliff ~ could've used empty objects
 		cliffStart = transform.position;
 		cliffStart.x += xOffset;
 		cliffEnd = transform.position;
@@ -125,4 +141,17 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	//			Debug.Log ("GROUNDED NOOOOOOO");
 	//		}
 	//	}
+
+	IEnumerator flicker(int blink){
+		Color defaultColor = spr.color; // Save default color
+
+		for (int i = 0; i < blink; i++) {
+			spr.color = Color.red;
+			yield return new WaitForSeconds(0.1f);
+			spr.color = Color.white;
+			yield return new WaitForSeconds(0.1f);
+		}
+
+		spr.color = defaultColor;
+	}
 }
