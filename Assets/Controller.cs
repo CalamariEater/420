@@ -9,6 +9,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public int jumps = 0;
 	public int jumpLimit = 2;
 
+	public float knockBack = 150.0f;
+
 	private Collider2D cdr;
 	private Rigidbody2D rb;
 	private SpriteRenderer spr;
@@ -60,6 +62,10 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			if (hp <= 0) { // Death
 				Destroy(gameObject);
 			}
+				
+			var force = transform.position - coll.transform.position;
+			force.Normalize ();
+			rb.AddForce (force * knockBack);
 		}
 	}
 
@@ -206,4 +212,5 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 		spr.color = defaultColor;
 	}
+		
 }

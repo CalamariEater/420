@@ -730,6 +730,7 @@ MonoBehaviour:
   hp: 10
   jumps: 0
   jumpLimit: 2
+  knockBack: 150
   onGround: 0
   yOffset: 0.1
   groundStart: {x: 0, y: 0}
