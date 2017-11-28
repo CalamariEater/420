@@ -113,6 +113,12 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 		}
 
+		if (coll.gameObject.tag == "stickywall") { // Check if baddie made collision
+
+			jumps = 0;
+
+		}
+
 		// Add more cases based on tag (damage taken)
 	}
 
