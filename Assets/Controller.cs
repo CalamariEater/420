@@ -21,12 +21,15 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	private SpriteRenderer spr;
 
 	// For Jump Raycast
-	public bool onGround = false;
-	public float yOffset = 0.1f; // Offset for player sprite ~ not dynamic
-	private int LayerGround;
-	public Vector2 groundStart;	// For jump raycast
-	public Vector2 groundEnd;	// For jump raycast
-	public float groundEndDist = 0.1f;	// For jump raycast
+
+	[SerializeField]
+	public Transform[] groundPoint;
+	[SerializeField]
+	public float groundRadius;
+	[SerializeField]
+	public LayerMask whatIsGround;
+	private bool isgrund;
+
 
 
 	// Bullet Stuff
@@ -40,17 +43,33 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	public float bulletSize = 0.2f;
 
+	private bool IsGrounded(){
+		if (rb.velocity.y <= 0) {
+			foreach (Transform point in groundPoint) {
+				Collider2D[] colliders = Physics2D.OverlapCircleAll (point.position, groundRadius, whatIsGround);
+				for (int i = 0; i < colliders.Length; i++) {
+					if (colliders[i].gameObject != gameObject) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
 		spr = GetComponent<SpriteRenderer>();
-		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
+
 		rb.freezeRotation = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		playerJump ();
 		playerMovement ();
 		playerFire ();
 		// Level up check
@@ -65,7 +84,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	// Use for physics stuff
 	void FixedUpdate () {
-		
+		isgrund = IsGrounded ();
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
@@ -91,6 +110,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	// Player Stuffs
 	void playerMovement() {
+		
 		// Left
 		if (Input.GetKey (KeyCode.A)) {
 			transform.position += Vector3.left * speed * Time.deltaTime;
@@ -101,52 +121,29 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			transform.position += Vector3.right * speed * Time.deltaTime;
 		}
 
-		playerJump ();
+
 	}
 
 	void playerJump() {
 		// Jump
 		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown(KeyCode.Space))  {
+			Debug.Log ("JUMP pressed");
+			if (isgrund) {
+				Debug.Log ("isground");
+				isgrund = false;
+				jumps = 0;
+			} else {
+				Debug.Log ("not ground");
+			}
 
-			// Set/update Raycast line
-			groundStart = transform.position;
-			groundStart.y -= yOffset;
-			groundEnd = transform.position;
-			groundEnd.y -= groundEndDist;
-
-			//playerJumpDEBUG();
-			RaycastHit2D groundHit = Physics2D.Linecast(groundStart, groundEnd);
-
-			if (groundHit) {
-				if (groundHit.transform.gameObject.layer == LayerGround) {
-					onGround = true;
-					jumps = 0;
-				}
-			} 
 			if (jumps < jumpLimit) {
-				Vector2 v = rb.velocity;
-				v.y = 0.0f;	
-				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
-				rb.AddForce (Vector2.up * jump); // Add impulse
-				onGround = false;	// TODO: Small bug where jumping doesnt register
+				rb.AddForce (new Vector2(0,jump));
 				jumps++;
 				Debug.Log ("DOOOUBLE JUMP");
 			} 
 		}
 	}
-
-	void playerJumpDEBUG() {
-		// Debug lines
-		groundStart = transform.position;
-		groundStart.y -= yOffset;
-
-
-		//groundEnd.y -= playerOffset;
-		groundEnd = transform.position;
-		groundEnd.y -= groundEndDist;
-
-		Debug.DrawLine(groundStart, groundEnd, Color.green);
-	}
+		
 
 	void playerFire() {
 		if (Input.GetKey (KeyCode.LeftArrow) && allowFire) {
