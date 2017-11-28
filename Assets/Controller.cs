@@ -3,13 +3,18 @@ using System.Collections;
 
 public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code clean up
 
-	public float speed = 2.0f;
-	public float jump = 200.0f;
+	// Player stats
+	public float speed = 2.0f; // move speed
+	public float exp = 0.0f; // current exp
+	public int lvl = 1; // current exp
+	public int skillPoints = 0;
+	public float jump = 200.0f; // jump force
 	public int hp = 10;
-	public int jumps = 0;
-	public int jumpLimit = 2;
+	public int jumps = 0; // number of jumps currently taken
+	public int jumpLimit = 2; // max number of jumps
 
 	public float knockBack = 150.0f;
+	private int lvlUp = 5;
 
 	private Collider2D cdr;
 	private Rigidbody2D rb;
@@ -24,14 +29,15 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public float groundEndDist = 0.1f;	// For jump raycast
 
 	// Bullet Stuff
-	public GameObject pewPrefab;
-	public Transform pewSpawnLeft;
-	public Transform pewSpawnRight;
+	public GameObject pewPrefab; // What it shoots
+	public Transform pewSpawnLeft; // Where bullet spawns
+	public Transform pewSpawnRight; 
 	public float pewSpeed = 3.0f;
 	public float pewDespawnRate = 2.0f;
 	public float pewFireRate = 0.5f;
 	public bool allowFire = true;
 
+	public float bulletSize = 0.2f;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +51,12 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	// Update is called once per frame
 	void Update () {
 
+		// Level up check
+		if (lvlUp < exp) {
+			exp = 0; //reset current exp
+			skillPoints++;
+			lvlUp++; //scale exp
+		}
 	}
 
 	// Use for physics stuff
@@ -54,19 +66,22 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "baddieBod") {
+		if (coll.gameObject.tag == "baddieBod") { // Check if baddie made collision
 			Debug.Log ("ow");
 			StartCoroutine(flicker (2));
 
-			hp--;
+			// HP stuff
+			hp--; // depending on damage of attack change this
 			if (hp <= 0) { // Death
 				Destroy(gameObject);
 			}
-				
+
+			// Knockback
 			var force = transform.position - coll.transform.position;
 			force.Normalize ();
 			rb.AddForce (force * knockBack);
 		}
+		// Add more cases based on tag (damage taken)
 	}
 
 	//*******************Helper Functions******************//
@@ -98,28 +113,6 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 			//playerJumpDEBUG();
 			RaycastHit2D groundHit = Physics2D.Linecast(groundStart, groundEnd);
-
-			//Debug.Log ("GROUNDHIT: " + groundHit.transform.gameObject.layer);
-			//Debug.Log ("LAYERGROUND: " + LayerGround);
-
-
-//			if (groundHit) {
-//				if (groundHit.transform.gameObject.layer == LayerGround) {
-//					rb.AddForce (Vector2.up * jump); // Add impulse
-//					onGround = true;
-//					jumps++;
-//					//Debug.Log ("JUMP");
-//				}
-//			} else if (jumps < jumpLimit) {
-//				rb.AddForce (Vector2.up * jump); // Add impulse
-//				onGround = true;
-//				jumps++;
-//				Debug.Log ("DOOOUBLE JUMP");
-//			} else if (!groundHit) {
-//				jumps = 0;
-//				onGround = false;
-//				//Debug.Log ("GROUNDED NOOOOOOO");
-//			}
 
 			if (groundHit) {
 				if (groundHit.transform.gameObject.layer == LayerGround) {
@@ -169,7 +162,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		var pew = (GameObject)Instantiate (pewPrefab, pewSpawnLeft.position, pewSpawnLeft.rotation);
 
 		// Velocity to pew
-		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * -pewSpeed;
+		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * -pewSpeed; // Speed
+		pew.gameObject.transform.localScale = new Vector3 (bulletSize, bulletSize, transform.localScale.y); // Bullet size
 
 		//Debug.Log ("Waiting for next shot...");
 
@@ -188,8 +182,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		var pew = (GameObject)Instantiate (pewPrefab, pewSpawnRight.position, pewSpawnLeft.rotation);
 
 		// Velocity to pew
-		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * pewSpeed;
-
+		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * pewSpeed; // Speed
+		pew.gameObject.transform.localScale = new Vector3 (bulletSize, bulletSize, transform.localScale.y); // Change bullet size
 		//Debug.Log ("Waiting for next shot...");
 
 		yield return new WaitForSeconds(pewFireRate);
