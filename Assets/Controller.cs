@@ -137,6 +137,9 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			}
 
 			if (jumps < jumpLimit) {
+				Vector2 v = rb.velocity;
+				v.y = 0.0f;	
+				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 				rb.AddForce (new Vector2(0,jump));
 				jumps++;
 				Debug.Log ("DOOOUBLE JUMP");
