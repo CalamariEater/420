@@ -1630,7 +1630,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.22017245
+  m_Mass: 0.22017248
   m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 1
@@ -1638,7 +1638,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 6
 --- !u!61 &2145213755
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1714,10 +1714,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2145213753}
-  m_LocalRotation: {x: -0, y: -0, z: -0.70380956, w: 0.7103887}
-  m_LocalPosition: {x: -0.41, y: 0.94, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -4.86, y: 0.5, z: 0}
   m_LocalScale: {x: 0.060000002, y: 0.90000004, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.467}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}

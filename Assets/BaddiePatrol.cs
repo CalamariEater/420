@@ -79,6 +79,7 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		// Determine if left side is cliff
 		cliffStart = transform.position;
 		cliffStart.x -= xOffset;
+		cliffStart.y -= yOffset;
 		cliffEnd = transform.position;
 		cliffEnd.x -= xOffset;
 		cliffEnd.y -= cliffEndDist;
@@ -96,6 +97,7 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		// Determine if right side is cliff ~ could've used empty objects
 		cliffStart = transform.position;
 		cliffStart.x += xOffset;
+		cliffStart.y -= yOffset;
 		cliffEnd = transform.position;
 		cliffEnd.x += xOffset;
 		cliffEnd.y -= cliffEndDist;
