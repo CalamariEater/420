@@ -19,7 +19,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 	private int LayerPlayer;
 
 	// for fly
-
+	public float distance = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +48,9 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "projectile") { // Collision for player bullet
 			//Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
+			Vector2 v = rb.velocity;
+			v.y = 0.0f;	
+			rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 			Destroy (coll.gameObject); // Destroy bullet
 			StartCoroutine(flicker (2));
 
@@ -68,7 +71,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 		transform.Rotate(new Vector3(0,-90,0),Space.Self);//correcting the original rotation
 
 		//move towards the player
-		if (Vector3.Distance(transform.position,thePlayer.transform.position)>1f){//move if distance from target is greater than 1
+		if (Vector3.Distance(transform.position,thePlayer.transform.position)>distance){//move if distance from target is greater than 1
 			transform.Translate(new Vector3(speed* Time.deltaTime,0,0) );
 		}
 	}
