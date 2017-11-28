@@ -8,6 +8,7 @@ TagManager:
   - powa
   - projectile
   - baddieBod
+  - trampoline
   layers:
   - Default
   - TransparentFX
