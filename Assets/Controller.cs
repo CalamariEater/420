@@ -103,15 +103,6 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			force.Normalize ();
 			rb.AddForce (force * knockBack);
 		}
-
-		if (coll.gameObject.tag == "trampoline") { // Check if baddie made collision
-			Debug.Log ("tramp");
-
-			Vector2 v = rb.velocity;
-			v.y = 0.0f;	
-			rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
-			rb.AddForce (new Vector2(0,400.0f));
-		}
 		// Add more cases based on tag (damage taken)
 	}
 
