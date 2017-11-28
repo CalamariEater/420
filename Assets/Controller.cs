@@ -28,6 +28,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public Vector2 groundEnd;	// For jump raycast
 	public float groundEndDist = 0.1f;	// For jump raycast
 
+
 	// Bullet Stuff
 	public GameObject pewPrefab; // What it shoots
 	public Transform pewSpawnLeft; // Where bullet spawns
@@ -50,19 +51,21 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	
 	// Update is called once per frame
 	void Update () {
-
+		playerMovement ();
+		playerFire ();
 		// Level up check
 		if (lvlUp < exp) {
 			exp = 0; //reset current exp
 			skillPoints++;
 			lvlUp++; //scale exp
 		}
+
+
 	}
 
 	// Use for physics stuff
 	void FixedUpdate () {
-		playerMovement ();
-		playerFire ();
+		
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
