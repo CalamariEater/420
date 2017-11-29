@@ -12,6 +12,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public int hp = 10;
 	public int jumps = 0; // number of jumps currently taken
 	public int jumpLimit = 2; // max number of jumps
+    private Color defaultColor;
 
 	public float knockBack = 150.0f;
 	private int lvlUp = 5;
@@ -67,7 +68,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
 		spr = GetComponent<SpriteRenderer>();
-
+        defaultColor = spr.color;
 		rb.freezeRotation = true;
 	}
 	
@@ -232,8 +233,6 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	}
 
 	IEnumerator flicker(int blink){
-		Color defaultColor = spr.color; // Save default color
-
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
 			yield return new WaitForSeconds(0.1f);

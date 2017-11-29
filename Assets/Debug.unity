@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 136008693}
   - component: {fileID: 136008692}
   - component: {fileID: 136008696}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: fancy_platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 724332833}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 921107414}
   - component: {fileID: 921107413}
   - component: {fileID: 921107416}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 956520578}
   - component: {fileID: 956520577}
   - component: {fileID: 956520580}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 958415003}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1439,7 +1439,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1043937949}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 1064579752}
   - component: {fileID: 1064579751}
   - component: {fileID: 1064579753}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: fancy_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 1430828564}
   - component: {fileID: 1430828563}
   - component: {fileID: 1430828562}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: moving_platform
   m_TagString: movingPlatform
   m_Icon: {fileID: 0}
@@ -1848,7 +1848,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1700854535}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1879,7 +1879,7 @@ GameObject:
   - component: {fileID: 1796073291}
   - component: {fileID: 1796073290}
   - component: {fileID: 1796073289}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: download
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,7 +2011,7 @@ GameObject:
   - component: {fileID: 1814529212}
   - component: {fileID: 1814529211}
   - component: {fileID: 1814529214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: trampoline
   m_TagString: trampoline
   m_Icon: {fileID: 0}
@@ -2149,7 +2149,7 @@ GameObject:
   - component: {fileID: 1872389065}
   - component: {fileID: 1872389066}
   - component: {fileID: 1872389067}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: levelTrigger
   m_TagString: levelTrigger
   m_Icon: {fileID: 0}
@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 2078859225}
   - component: {fileID: 2078859224}
   - component: {fileID: 2078859227}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: stickywall
   m_TagString: stickywall
   m_Icon: {fileID: 0}
@@ -2476,7 +2476,7 @@ GameObject:
   - component: {fileID: 2145213756}
   - component: {fileID: 2145213755}
   - component: {fileID: 2145213754}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pushable_block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
