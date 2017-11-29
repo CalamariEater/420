@@ -13,6 +13,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 	private GameObject thePlayer;
 	private Controller playerScript; // To change any values on player
 	private SpriteRenderer spr; // To change spritecolor
+	private Color defaultColor;
 
 
 	// For Jump Raycast
@@ -40,7 +41,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
 		rb.freezeRotation = true;
-
+		Color defaultColor = spr.color; // Save default color
 	}
 	
 	// Update is called once per frame
@@ -137,8 +138,6 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 //	}
 
 	IEnumerator flicker(int blink){
-		Color defaultColor = spr.color; // Save default color
-
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
 			yield return new WaitForSeconds(0.1f);
