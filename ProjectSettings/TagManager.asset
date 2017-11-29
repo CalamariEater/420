@@ -12,6 +12,7 @@ TagManager:
   - stickywall
   - movingPlatform
   - levelTrigger
+  - death
   layers:
   - Default
   - TransparentFX
