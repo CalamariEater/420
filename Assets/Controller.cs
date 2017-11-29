@@ -43,6 +43,11 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	public float bulletSize = 0.2f;
 
+	private Transform activePlatform;
+	private Vector3 activeLocalPlatformPoint;
+	private Vector3 activeGlobalPlatformPoint;
+	private Vector3 lastPlatformVelocity;
+
 	private bool IsGrounded(){
 		if (rb.velocity.y <= 0) {
 			foreach (Transform point in groundPoint) {
@@ -118,8 +123,18 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			jumps = 0;
 
 		}
+			
+		if (coll.gameObject.tag == "movingPlatform") {
+			transform.SetParent (coll.transform);
+		}
 
 		// Add more cases based on tag (damage taken)
+	}
+
+	void OnCollisionExit2D (Collision2D coll) {
+		if (coll.gameObject.tag == "movingPlatform") {
+			transform.parent = null;
+		}
 	}
 
 	//*******************Helper Functions******************//
