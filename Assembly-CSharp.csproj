@@ -58,7 +58,11 @@
      <Compile Include="Assets\Body.cs" />
      <Compile Include="Assets\ButtonManager.cs" />
      <Compile Include="Assets\Controller.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\PauseGame.cs" />
+=======
      <Compile Include="Assets\movingPlatform.cs" />
+>>>>>>> 42ecf35b8a6f1d0af5d8d37f811bdb9c4e90ca1a
      <Compile Include="Assets\Pew.cs" />
      <Compile Include="Assets\platform.cs" />
      <Compile Include="Assets\PowaJumpMore.cs" />
