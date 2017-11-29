@@ -23,4 +23,5 @@ public class Projectile {
         dmg = damage;
         spd = speed;
     }
+
 }

@@ -96,7 +96,9 @@
     <Compile Include="Assets\PauseGame.cs" />
     <Compile Include="Assets\Pew.cs" />
     <Compile Include="Assets\platform.cs" />
+    <Compile Include="Assets\PowaJumpHigher.cs" />
     <Compile Include="Assets\PowaJumpMore.cs" />
+    <Compile Include="Assets\PowaShootHarder.cs" />
     <Compile Include="Assets\Projectile.cs" />
   </ItemGroup>
   <ItemGroup>
