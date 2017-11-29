@@ -15,11 +15,8 @@ public class platform : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "projectile") { // Check if baddie made collision
+		if (coll.gameObject.tag == "projectile") { // Check if pew made collision
 			Destroy(coll.gameObject);
 		}
-
-
-		// Add more cases based on tag (damage taken)
 	}
 }

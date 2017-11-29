@@ -94,7 +94,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "baddieBod") { // Check if baddie made collision
+		if (coll.gameObject.tag == "baddieBod") { // Baddie check
 			Debug.Log ("ow");
 			StartCoroutine(flicker (2));
 
@@ -110,7 +110,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			rb.AddForce (force * knockBack);
 		}
 
-		if (coll.gameObject.tag == "trampoline") { // Check if baddie made collision
+		if (coll.gameObject.tag == "trampoline") { // Trampoline check
 			jumps = jumpLimit;
 			Vector2 v = rb.velocity;
 			v.y = 0.0f;	
@@ -119,13 +119,11 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 		}
 
-		if (coll.gameObject.tag == "stickywall") { // Check if baddie made collision
-
+		if (coll.gameObject.tag == "stickywall") { // Sticky wall check
 			jumps = 0;
-
 		}
 			
-		if (coll.gameObject.tag == "movingPlatform") {
+		if (coll.gameObject.tag == "movingPlatform") { // Moving platform check
 			transform.SetParent (coll.transform);
 		}
 
