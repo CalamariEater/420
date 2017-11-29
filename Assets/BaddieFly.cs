@@ -84,9 +84,9 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 		Color defaultColor = spr.color; // Save default color
 
 		for (int i = 0; i < blink; i++) {
-			spr.color = Color.red;
+			spr.color = Color.clear;
 			yield return new WaitForSeconds(0.1f);
-			spr.color = Color.white;
+			spr.color = Color.black;
 			yield return new WaitForSeconds(0.1f);
 		}
 
