@@ -19,8 +19,10 @@ public class levelTrigger : MonoBehaviour {
 	// Use this for initialization
 	void OnCollisionEnter2D (Collision2D Colider)
 	{
-		if(Colider.gameObject.tag == "Player");
-		Application.LoadLevel(level);
+        if (Colider.gameObject.tag == "Player")
+        {
+            Application.LoadLevel(level);
+        }
 	}
 
 
