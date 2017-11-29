@@ -128,12 +128,9 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			transform.SetParent (coll.transform);
 		}
 
-		if (coll.gameObject.tag == "levelTrigger") { // Check if baddie made collision
-
-			Debug.Log ("winner winner");
-
+		if (coll.gameObject.tag == "cup") {
+			
 		}
-
 		// Add more cases based on tag (damage taken)
 	}
 
