@@ -10,6 +10,7 @@ TagManager:
   - baddieBod
   - trampoline
   - stickywall
+  - movingPlatform
   layers:
   - Default
   - TransparentFX
