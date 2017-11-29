@@ -13,6 +13,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	private GameObject thePlayer;
 	private Controller playerScript; // To change any values on player
 	private SpriteRenderer spr; // To change spritecolor
+	private Color defaultColor;
 
 	// For Jump Raycast
 	private int LayerGround;
@@ -34,12 +35,13 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	void Start () {
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
+		spr = GetComponent<SpriteRenderer>(); //assign spriteRenderer
 		thePlayer = GameObject.Find ("Player");
 		playerScript = thePlayer.GetComponent<Controller> ();
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
 		LayerPlayer = LayerMask.NameToLayer("Player");
 		rb.freezeRotation = true;
-
+		defaultColor = spr.color; // Save default color
 
 
 	}
@@ -56,7 +58,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "projectile") { // Collision for player bullet
-			//Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
+			Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
 			Destroy (coll.gameObject); // Destroy bullet
 			StartCoroutine(flicker (2));
 
@@ -104,41 +106,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		}
 	}
 
-
-	//	void baddieJump() {	//TODO: Some condition to make baddie jump
-	//		// Jump
-	//		bool placeholderCondition = false;
-	//		if (placeholderCondition)  {	// Some condition when baddie should jump
-	//
-	//			// Set/update Raycast line
-	//			groundStart = transform.position;
-	//			groundStart.y -= yOffset;
-	//			groundEnd = transform.position;
-	//			groundEnd.y -= groundEndDist;
-	//
-	//			//Debug.DrawLine(groundStart, groundEnd, Color.green);
-	//
-	//			RaycastHit2D groundHit = Physics2D.Linecast(groundStart, groundEnd);
-	//
-	//			//Debug.Log ("GROUNDHIT: " + groundHit.transform.gameObject.layer);
-	//			//Debug.Log ("LAYERGROUND: " + LayerGround);
-	//
-	//
-	//			if (Physics2D.Linecast (groundStart, groundEnd)) {
-	//				if (groundHit.transform.gameObject.layer == LayerGround) {
-	//					onGround = true;
-	//					rb.AddForce (Vector2.up * jump); // Add impulse
-	//					Debug.Log ("GROUNDED YO");
-	//				}
-	//			}
-	//
-	//			onGround = false;
-	//			Debug.Log ("GROUNDED NOOOOOOO");
-	//		}
-	//	}
-
 	IEnumerator flicker(int blink){
-		Color defaultColor = spr.color; // Save default color
 
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
