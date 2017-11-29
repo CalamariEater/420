@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 1796073290}
   - component: {fileID: 1796073289}
   m_Layer: 2
-  m_Name: download
+  m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
