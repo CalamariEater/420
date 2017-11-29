@@ -11,6 +11,7 @@ TagManager:
   - trampoline
   - stickywall
   - movingPlatform
+  - levelTrigger
   layers:
   - Default
   - TransparentFX
