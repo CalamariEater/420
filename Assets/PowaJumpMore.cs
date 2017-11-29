@@ -22,7 +22,7 @@ public class PowaJumpMore : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			Debug.Log ("POWA UUUUUP");
+			Debug.Log ("WE TRIPLE JUMP NOW");
             Destroy(gameObject);
             playerScript.jumpLimit += 1;
 		}

@@ -98,6 +98,7 @@
     <Compile Include="Assets\platform.cs" />
     <Compile Include="Assets\PowaJumpHigher.cs" />
     <Compile Include="Assets\PowaJumpMore.cs" />
+    <Compile Include="Assets\PowaShootBigger.cs" />
     <Compile Include="Assets\PowaShootHarder.cs" />
     <Compile Include="Assets\Projectile.cs" />
   </ItemGroup>

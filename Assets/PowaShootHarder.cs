@@ -5,6 +5,8 @@ public class PowaShootHarder : MonoBehaviour
 {
 
     private int LayerPlayer;
+    private Projectile projectileScript; // To change values on bullet
+    public int dmg = 1;
 
     // Use this for initialization
     void Start()
@@ -25,6 +27,7 @@ public class PowaShootHarder : MonoBehaviour
         {
             Debug.Log("HARDER PEW");
             Destroy(gameObject);
+            projectileScript.dmg += 1;
         }
     }
 }
