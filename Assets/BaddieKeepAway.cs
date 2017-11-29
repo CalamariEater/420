@@ -36,6 +36,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 	void Start () {
 		rb = GetComponent<Rigidbody2D> (); //assign rigidbody to 2d
 		cdr = GetComponent<Collider2D> (); //assign collider to 2d
+		spr = GetComponent<SpriteRenderer>(); //assign spriteRenderer
 		thePlayer = GameObject.Find ("Player");
 		playerScript = thePlayer.GetComponent<Controller> ();
 		LayerGround = LayerMask.NameToLayer ("Ground");	//gets layer "Ground" from unity
@@ -103,40 +104,7 @@ public class BaddieKeepAway: MonoBehaviour {	//TODO: Inherit Body class?? e.g co
 			}
 		}
 	}
-
-
-//	void baddieJump() {	//TODO: Some condition to make baddie jump
-//		// Jump
-//		bool placeholderCondition = false;
-//		if (placeholderCondition)  {	// Some condition when baddie should jump
-//
-//			// Set/update Raycast line
-//			groundStart = transform.position;
-//			groundStart.y -= yOffset;
-//			groundEnd = transform.position;
-//			groundEnd.y -= groundEndDist;
-//
-//			//Debug.DrawLine(groundStart, groundEnd, Color.green);
-//
-//			RaycastHit2D groundHit = Physics2D.Linecast(groundStart, groundEnd);
-//
-//			//Debug.Log ("GROUNDHIT: " + groundHit.transform.gameObject.layer);
-//			//Debug.Log ("LAYERGROUND: " + LayerGround);
-//
-//
-//			if (Physics2D.Linecast (groundStart, groundEnd)) {
-//				if (groundHit.transform.gameObject.layer == LayerGround) {
-//					onGround = true;
-//					rb.AddForce (Vector2.up * jump); // Add impulse
-//					Debug.Log ("GROUNDED YO");
-//				}
-//			}
-//
-//			onGround = false;
-//			Debug.Log ("GROUNDED NOOOOOOO");
-//		}
-//	}
-
+		
 	IEnumerator flicker(int blink){
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
