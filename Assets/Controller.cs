@@ -101,8 +101,10 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			// HP stuff
 			hp--; // depending on damage of attack change this
 			if (hp <= 0) { // Death
-				Destroy(gameObject);
-			}
+             //	Destroy(gameObject);
+                transform.position = Vector3.zero; // changed death to respawn instead (tentative infinite lives)
+                hp = 10;                           // set hp to initial value
+            }
 
 			// Knockback
 			var force = transform.position - coll.transform.position;
@@ -129,7 +131,13 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			transform.SetParent (coll.transform);
 		}
 
-		if (coll.gameObject.tag == "cup") {
+        if (coll.gameObject.tag == "death") // if you fall off and hit platform of doom
+        {
+            transform.position = Vector3.zero; // respawn
+            hp = 10;                           // set hp to initial value 
+        }
+
+        if (coll.gameObject.tag == "cup") {
 			
 		}
 		// Add more cases based on tag (damage taken)
