@@ -61,6 +61,24 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 				playerScript.exp += exp; 
 			}
 		}
+
+
+	}
+
+	void OnCollisionStay2D(Collision2D coll)
+	{
+		if (coll.gameObject.tag == "killBaddieSlow") {
+			int num = Random.Range(1,250);
+			Debug.Log ("fk me in the butt");
+			Debug.Log (num);
+			if (num == 1) {
+				hp = hp - 1;
+			}
+
+			if (hp <= 0) { // Death
+				Destroy(gameObject);
+			}
+		}
 	}
 
 

@@ -28,8 +28,9 @@ public class PauseGame : MonoBehaviour {
 	}
 
 	public void OptionsBtn(string newGameLevel){
-		PlayerPrefs.SetInt("previousLevel", Application.loadedLevel);
-		SceneManager.LoadScene(newGameLevel);
+		//PlayerPrefs.SetInt("previousLevel", Application.loadedLevel);
+		//SceneManager.LoadScene(newGameLevel);
+		SceneManager.LoadScene ("Options", LoadSceneMode.Additive);
 	}
 
 	public void ReturnBtn(string newGameLevel){
