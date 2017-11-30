@@ -37,6 +37,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	public GameObject pewPrefab; // What it shoots
 	public Transform pewSpawnLeft; // Where bullet spawns
 	public Transform pewSpawnRight; 
+	public Transform pewSpawnUp;
 	public float pewSpeed = 3.0f;
 	public float pewDespawnRate = 2.0f;
 	public float pewFireRate = 0.5f;
@@ -200,6 +201,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			StartCoroutine (shootLeft ()); // Allows fire rate
 		} else if (Input.GetKey (KeyCode.RightArrow) && allowFire) {
 			StartCoroutine (shootRight ());
+		} else if (Input.GetKey (KeyCode.UpArrow) && allowFire) {
+			StartCoroutine (shootUp ());
 		}
 	}
 
@@ -231,6 +234,25 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 		// Velocity to pew
 		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.right * pewSpeed; // Speed
+		pew.gameObject.transform.localScale = new Vector3 (bulletSize, bulletSize, transform.localScale.y); // Change bullet size
+		//Debug.Log ("Waiting for next shot...");
+
+		yield return new WaitForSeconds(pewFireRate);
+
+		// Destroy pew
+		Destroy(pew, pewDespawnRate);
+
+		allowFire = true;
+	}
+
+	IEnumerator shootUp() { // Possible enable disable? Seems pretty op
+		allowFire = false;
+
+		// Create pew from prefab
+		var pew = (GameObject)Instantiate (pewPrefab, pewSpawnUp.position, pewSpawnUp.rotation);
+
+		// Velocity to pew
+		pew.GetComponent<Rigidbody2D>().velocity = pew.transform.up * pewSpeed; // Speed
 		pew.gameObject.transform.localScale = new Vector3 (bulletSize, bulletSize, transform.localScale.y); // Change bullet size
 		//Debug.Log ("Waiting for next shot...");
 

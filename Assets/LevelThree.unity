@@ -626,7 +626,7 @@ RectTransform:
   - {fileID: 1504211485}
   - {fileID: 1285234575}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1752,11 +1752,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 674482853}
---- !u!4 &682774676 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4324704281019860, guid: 0073d304c72d9458eb4a2c1e94b1a023,
-    type: 2}
-  m_PrefabInternal: {fileID: 858180102}
 --- !u!1001 &688308590
 Prefab:
   m_ObjectHideFlags: 0
@@ -2009,11 +2004,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4056275100349226, guid: 6cf143a6118cd4483bcdbcda1c506489, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.835543
+      value: 8.65
       objectReference: {fileID: 0}
     - target: {fileID: 4056275100349226, guid: 6cf143a6118cd4483bcdbcda1c506489, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 11.155569
+      value: 11.28
       objectReference: {fileID: 0}
     - target: {fileID: 4056275100349226, guid: 6cf143a6118cd4483bcdbcda1c506489, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2150,6 +2145,14 @@ Prefab:
     - target: {fileID: 1918479286270252, guid: 0073d304c72d9458eb4a2c1e94b1a023, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476020446455014, guid: 0073d304c72d9458eb4a2c1e94b1a023, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.828
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476020446455014, guid: 0073d304c72d9458eb4a2c1e94b1a023, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0073d304c72d9458eb4a2c1e94b1a023, type: 2}
@@ -3243,7 +3246,7 @@ Prefab:
         type: 2}
       propertyPath: target
       value: 
-      objectReference: {fileID: 682774676}
+      objectReference: {fileID: 0}
     - target: {fileID: 20510725849976768, guid: a9057a3bdc3c843988de1048b9a4a8a7,
         type: 2}
       propertyPath: m_ClearFlags
