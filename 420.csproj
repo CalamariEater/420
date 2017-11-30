@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\PowaJumpHigher.cs" />
     <Compile Include="Assets\Scripts\PowaJumpMore.cs" />
     <Compile Include="Assets\Scripts\PowaShootBigger.cs" />
+    <Compile Include="Assets\Scripts\PowaShootFaster.cs" />
     <Compile Include="Assets\Scripts\PowaShootHarder.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
   </ItemGroup>
