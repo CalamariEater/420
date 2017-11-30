@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour{
 
+	void Start () {
+		Time.timeScale = 1; //starts time should start game.
+	}
 
 	public void NewGameBtn(string newGameLevel){
 		SceneManager.LoadScene(newGameLevel);

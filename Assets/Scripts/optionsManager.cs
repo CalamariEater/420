@@ -7,6 +7,7 @@ public class optionsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1; //starts time should start game.
 
 	}
 	
