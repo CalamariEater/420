@@ -30,14 +30,12 @@ public class movingPlatform : MonoBehaviour {
 				if (gameObject.transform.position == pos2) { // Reached pos2 - change direction!
 					//Debug.Log ("pos1 reached!");
 					destReached = true;
-					StartCoroutine (waitDood ());
 				}
 			} else {
 				transform.position = Vector2.MoveTowards (transform.position, pos1, speed);
 
 				if (gameObject.transform.position == pos1) { // Reached pos1 - change direction!
 					destReached = false;
-					StartCoroutine (waitDood ());
 				}
 			}
 
@@ -53,7 +51,6 @@ public class movingPlatform : MonoBehaviour {
 
 	IEnumerator waitDood()
 	{
-		isWait = true;
 		yield return new WaitForSeconds(wait);
 		isWait = false;
 	}

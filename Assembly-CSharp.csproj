@@ -57,7 +57,6 @@
      <Compile Include="Assets\Scripts\BaddiePatrol.cs" />
      <Compile Include="Assets\Scripts\Body.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
-     <Compile Include="Assets\Scripts\CombatMusicControl.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\fadingPlatform.cs" />
      <Compile Include="Assets\Scripts\levelTrigger.cs" />
