@@ -15,6 +15,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 	private SpriteRenderer spr; // To change spritecolor
 	private GameObject thePlayer;
 	private Controller playerScript; // To change any values on player
+	private Color defaultColor;
 
 	private int LayerPlayer;
 
@@ -30,7 +31,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 		playerScript = thePlayer.GetComponent<Controller> ();
 		LayerPlayer = LayerMask.NameToLayer("Player");
 		rb.freezeRotation = true;
-
+		defaultColor = spr.color; // Save default color
 
 
 	}
@@ -49,7 +50,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 		if (coll.gameObject.tag == "projectile") { // Collision for player bullet
 			//Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
 
-			rb.velocity = Vector2.zero; // Set Y velocity to 0 ~ avoids spam jump high af bug
+			rb.velocity = Vector2.zero;
 
 			Destroy (coll.gameObject); // Destroy bullet
 			StartCoroutine(flicker (2));
@@ -81,8 +82,6 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 
 
 	IEnumerator flicker(int blink){
-		Color defaultColor = spr.color; // Save default color
-
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
 			yield return new WaitForSeconds(0.1f);
