@@ -258,7 +258,7 @@ MonoBehaviour:
   pewDespawnRate: 2
   pewFireRate: 0.5
   allowFire: 1
-  bulletSize: 0.2
+  bulletSize: 0.3
 --- !u!212 &212504265652605130
 SpriteRenderer:
   m_ObjectHideFlags: 1
