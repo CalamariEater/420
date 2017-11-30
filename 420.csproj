@@ -84,23 +84,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BaddieFly.cs" />
-    <Compile Include="Assets\BaddieFollow.cs" />
-    <Compile Include="Assets\BaddieKeepAway.cs" />
-    <Compile Include="Assets\BaddiePatrol.cs" />
-    <Compile Include="Assets\Body.cs" />
-    <Compile Include="Assets\ButtonManager.cs" />
-    <Compile Include="Assets\Controller.cs" />
-    <Compile Include="Assets\levelTrigger.cs" />
-    <Compile Include="Assets\movingPlatform.cs" />
-    <Compile Include="Assets\PauseGame.cs" />
-    <Compile Include="Assets\Pew.cs" />
-    <Compile Include="Assets\platform.cs" />
-    <Compile Include="Assets\PowaJumpHigher.cs" />
-    <Compile Include="Assets\PowaJumpMore.cs" />
-    <Compile Include="Assets\PowaShootBigger.cs" />
-    <Compile Include="Assets\PowaShootHarder.cs" />
-    <Compile Include="Assets\Projectile.cs" />
+    <Compile Include="Assets\Scripts\BaddieFly.cs" />
+    <Compile Include="Assets\Scripts\BaddieFollow.cs" />
+    <Compile Include="Assets\Scripts\BaddieKeepAway.cs" />
+    <Compile Include="Assets\Scripts\BaddiePatrol.cs" />
+    <Compile Include="Assets\Scripts\Body.cs" />
+    <Compile Include="Assets\Scripts\ButtonManager.cs" />
+    <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\fadingPlatform.cs" />
+    <Compile Include="Assets\Scripts\levelTrigger.cs" />
+    <Compile Include="Assets\Scripts\movingPlatform.cs" />
+    <Compile Include="Assets\Scripts\optionsManager.cs" />
+    <Compile Include="Assets\Scripts\PauseGame.cs" />
+    <Compile Include="Assets\Scripts\Pew.cs" />
+    <Compile Include="Assets\Scripts\platform.cs" />
+    <Compile Include="Assets\Scripts\PowaJumpHigher.cs" />
+    <Compile Include="Assets\Scripts\PowaJumpMore.cs" />
+    <Compile Include="Assets\Scripts\PowaShootBigger.cs" />
+    <Compile Include="Assets\Scripts\PowaShootHarder.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

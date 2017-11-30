@@ -101,13 +101,13 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			// HP stuff
 			hp--; // depending on damage of attack change this
 			if (hp <= 0) { // Death
-             //	Destroy(gameObject);
-                transform.position = Vector3.zero; // changed death to respawn instead (tentative infinite lives)
-                hp = 10;                           // set hp to initial value
+                           //	Destroy(gameObject);
+                Application.LoadLevel(Application.loadedLevel);
+
             }
 
-			// Knockback
-			var force = transform.position - coll.transform.position;
+            // Knockback
+            var force = transform.position - coll.transform.position;
 			force.Normalize ();
 			rb.AddForce (force * knockBack);
 		}
@@ -133,8 +133,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
         if (coll.gameObject.tag == "death") // if you fall off and hit platform of doom
         {
-            transform.position = Vector3.zero; // respawn
-            hp = 10;                           // set hp to initial value 
+            Application.LoadLevel(Application.loadedLevel);
         }
 
         if (coll.gameObject.tag == "cup") {
