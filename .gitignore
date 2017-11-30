@@ -39,9 +39,23 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+<<<<<<< HEAD
 Assembly-CSharp-Editor.csproj
 Assembly-CSharp-firstpass.csproj
 Assembly-CSharp.csproj
 Library/assetDatabase3
 Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb
+=======
+Library/assetDatabase3
+Library/assetDatabase3
+Library/assetDatabase3
+Library/metadata/00/00000000000000005100000000000000
+Library/metadata/00/00000000000000008000000000000000
+Library/ScriptAssemblies/Assembly-CSharp.dll
+>>>>>>> backup2
+Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+Library/assetDatabase3
+Library/metadata/00/00000000000000005100000000000000
+Library/metadata/00/00000000000000008000000000000000
+Library/ScriptAssemblies/Assembly-CSharp.dll
 Library/ScriptAssemblies/Assembly-CSharp.dll.mdb

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Body.cs" />
      <Compile Include="Assets\ButtonManager.cs" />
      <Compile Include="Assets\Controller.cs" />
+     <Compile Include="Assets\fadingPlatform.cs" />
      <Compile Include="Assets\levelTrigger.cs" />
      <Compile Include="Assets\movingPlatform.cs" />
      <Compile Include="Assets\optionsManager.cs" />

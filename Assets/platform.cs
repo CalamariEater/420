@@ -18,8 +18,5 @@ public class platform : MonoBehaviour {
 		if (coll.gameObject.tag == "projectile") { // Check if baddie made collision
 			Destroy(coll.gameObject);
 		}
-
-
-		// Add more cases based on tag (damage taken)
 	}
 }

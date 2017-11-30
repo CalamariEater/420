@@ -40,5 +40,11 @@ public class movingPlatform : MonoBehaviour {
 		position = gameObject.transform.position;
 	}
 
+	void OnCollisionEnter2D (Collision2D coll) {
+		if (coll.gameObject.tag == "projectile") { // Check if baddie made collision
+			Destroy(coll.gameObject);
+		}
+	}
+
 
 }
