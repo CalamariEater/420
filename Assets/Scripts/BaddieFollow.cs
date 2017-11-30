@@ -29,7 +29,7 @@ public class BaddieFollow: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 	public bool tooClose = false;
 	public Vector2 followStart;
 	public Vector2 followEnd;
-	public float followEndDist = 0.2f;
+	public float followEndDist = 0.1f; // point closest to baddie
 
 	// Use this for initialization
 	void Start () {
