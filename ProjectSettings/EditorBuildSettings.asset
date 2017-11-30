@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: 3af4211b7c1fb4d69a5c39b8541555a0
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/d799e5221c8554abaa12830392fc861c
+    path: 
     guid: d799e5221c8554abaa12830392fc861c
   - enabled: 1
     path: Assets/LevelOne.unity
@@ -17,3 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Options.unity
     guid: 3de53e2aecd3544d6b1894e7c5b6f46c
+  - enabled: 1
+    path: Assets/LevelTwo.unity
+    guid: 4972a824e1af947f18a7124658c61255
+  - enabled: 1
+    path: Assets/LevelThree.unity
+    guid: 8331e16d4c6b56441a9c204188503323
