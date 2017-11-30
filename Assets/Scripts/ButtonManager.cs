@@ -13,8 +13,9 @@ public class ButtonManager : MonoBehaviour{
 	}
 
 	public void OptionsBtn(string newGameLevel){
-		PlayerPrefs.SetInt("previousLevel", Application.loadedLevel);
-		SceneManager.LoadScene(newGameLevel);
+		//PlayerPrefs.SetInt("previousLevel", Application.loadedLevel);
+		//SceneManager.LoadScene(newGameLevel);
+		SceneManager.LoadScene ("Options", LoadSceneMode.Additive);
 	}
 
 	public void ExitGameBtn(){
