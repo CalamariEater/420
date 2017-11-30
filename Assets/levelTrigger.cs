@@ -17,12 +17,16 @@ public class levelTrigger : MonoBehaviour {
 	public string level;
 
 	// Use this for initialization
-	void OnCollisionEnter2D (Collision2D Colider)
+	void OnCollisionEnter2D (Collision2D coll)
 	{
-        if (Colider.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player")
         {
             Application.LoadLevel(level);
         }
+
+		if (coll.gameObject.tag == "projectile") { // Check if baddie made collision
+			Destroy(coll.gameObject);
+		}
 	}
 
 
