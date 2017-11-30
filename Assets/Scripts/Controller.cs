@@ -54,7 +54,10 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			foreach (Transform point in groundPoint) {
 				Collider2D[] colliders = Physics2D.OverlapCircleAll (point.position, groundRadius, whatIsGround);
 				for (int i = 0; i < colliders.Length; i++) {
-					if (colliders[i].gameObject != gameObject) {
+					if (colliders [i].gameObject.tag == "notGround") {
+						return false;
+					}
+					else if (colliders[i].gameObject != gameObject) {
 						return true;
 					}
 				}

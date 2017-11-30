@@ -7,6 +7,7 @@ public class optionsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//Time.timeScale = 1; //starts time should start game.
 
 	}
 	
@@ -16,7 +17,9 @@ public class optionsManager : MonoBehaviour {
 	}
 
 	public void DoneBtn(){
-		int previousLevel = PlayerPrefs.GetInt ("previousLevel");
-		Application.LoadLevel (previousLevel);
+		//int previousLevel = PlayerPrefs.GetInt ("previousLevel");
+		//Application.LoadLevel (previousLevel);
+		SceneManager.UnloadScene ("Options");
+
 	}
 }

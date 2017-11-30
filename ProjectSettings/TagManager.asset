@@ -13,7 +13,11 @@ TagManager:
   - movingPlatform
   - levelTrigger
   - death
+<<<<<<< HEAD
   - killBaddieSlow
+=======
+  - notGround
+>>>>>>> 9ab5d9cc115199b369f79f83d1c1594e970a5a1a
   layers:
   - Default
   - TransparentFX
