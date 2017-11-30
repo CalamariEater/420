@@ -30,7 +30,7 @@ public class PowaShootFaster : MonoBehaviour
         {
             Debug.Log("SHOOT FAST");
             Destroy(gameObject);
-            playerScript.bulletSize *= 2;
+            playerScript.pewSpeed *= 2;
         }
     }
 }

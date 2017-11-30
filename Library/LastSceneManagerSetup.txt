@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/LevelBasil.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Menu.unity
-=======
 - path: Assets/LevelTwo.unity
->>>>>>> 2ee84b587927030eda35337cc9aaaa51cc13a8f5
->>>>>>> 9ab5d9cc115199b369f79f83d1c1594e970a5a1a
   isLoaded: 1
   isActive: 1
