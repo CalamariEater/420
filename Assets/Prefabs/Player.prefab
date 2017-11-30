@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4553640568192804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PewSpawnLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4693526562926614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: groundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572856371585922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PewSpawnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4982717213215530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: groundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 212504265652605130}
   - component: {fileID: 58403166724825856}
   - component: {fileID: 50242296270478626}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4977194739402512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'groundPoint '
   m_TagString: Untagged
   m_Icon: {fileID: 0}

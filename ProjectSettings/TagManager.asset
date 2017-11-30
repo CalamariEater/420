@@ -4,20 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ground
-  - powa
   - projectile
-  - baddieBod
-  - trampoline
-  - stickywall
-  - movingPlatform
-  - levelTrigger
-  - death
-<<<<<<< HEAD
-  - killBaddieSlow
-=======
   - notGround
->>>>>>> 9ab5d9cc115199b369f79f83d1c1594e970a5a1a
+  - baddieBod
+  - levelTrigger
+  - movingPlatform
+  - death
   layers:
   - Default
   - TransparentFX
@@ -27,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
   - Player
+  - 
   - 
   - 
   - 
