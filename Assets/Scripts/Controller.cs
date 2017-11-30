@@ -130,7 +130,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 		}
 			
-		if (coll.gameObject.tag == "movingPlatform") {
+		if ((coll.gameObject.tag == "movingPlatform") || (coll.gameObject.tag == "pushableBlock")) {
 			transform.SetParent (coll.transform);
 		}
 
@@ -146,7 +146,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	}
 
 	void OnCollisionExit2D (Collision2D coll) {
-		if (coll.gameObject.tag == "movingPlatform") {
+		if ((coll.gameObject.tag == "movingPlatform") || (coll.gameObject.tag == "pushableBlock")) {
 			transform.parent = null;
 		}
 	}
