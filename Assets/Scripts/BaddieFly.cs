@@ -15,6 +15,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 	private SpriteRenderer spr; // To change spritecolor
 	private GameObject thePlayer;
 	private Controller playerScript; // To change any values on player
+	private Color defaultColor;
 
 	private int LayerPlayer;
 
@@ -30,7 +31,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 		playerScript = thePlayer.GetComponent<Controller> ();
 		LayerPlayer = LayerMask.NameToLayer("Player");
 		rb.freezeRotation = true;
-
+		defaultColor = spr.color; // Save default color
 
 
 	}
@@ -81,8 +82,6 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 
 
 	IEnumerator flicker(int blink){
-		Color defaultColor = spr.color; // Save default color
-
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
 			yield return new WaitForSeconds(0.1f);
