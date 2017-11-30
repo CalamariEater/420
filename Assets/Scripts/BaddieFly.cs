@@ -49,7 +49,7 @@ public class BaddieFly: MonoBehaviour {	//TODO: Inherit Body class?? e.g code cl
 		if (coll.gameObject.tag == "projectile") { // Collision for player bullet
 			//Debug.Log ("YO HIT ME DOOOD WOOOOwooOowoOWow");
 
-			rb.velocity = Vector2.zero; // Set Y velocity to 0 ~ avoids spam jump high af bug
+			rb.velocity = Vector2.zero;
 
 			Destroy (coll.gameObject); // Destroy bullet
 			StartCoroutine(flicker (2));
