@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour {
 	public Transform canvas;
@@ -24,5 +25,13 @@ public class PauseGame : MonoBehaviour {
 			Time.timeScale = 1; //starts time should start game.
 		}
 
+	}
+
+	public void OptionsBtn(string newGameLevel){
+		SceneManager.LoadScene(newGameLevel);
+	}
+
+	public void ReturnBtn(string newGameLevel){
+		SceneManager.LoadScene(newGameLevel);
 	}
 }
