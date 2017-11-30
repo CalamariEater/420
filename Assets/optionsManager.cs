@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platform : MonoBehaviour {
+public class optionsManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,11 +12,5 @@ public class platform : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "projectile") { // Check if baddie made collision
-			Destroy(coll.gameObject);
-		}
 	}
 }
