@@ -8,6 +8,7 @@ public class HPBar : MonoBehaviour {
 	private GameObject thePlayer;
 	private Controller playerScript; // To change any values on player
 	public Slider theSlider; // access to the slider
+	private int defaultHP = 10;
 
 	private float previousHP;
 
@@ -15,7 +16,7 @@ public class HPBar : MonoBehaviour {
 	void Start () {
 		thePlayer = GameObject.Find ("Player");
 		playerScript = thePlayer.GetComponent<Controller> ();
-		previousHP = playerScript.hp; // get initial hp val
+		previousHP = 10; // get initial hp val
 	}
 	
 	// Update is called once per frame
