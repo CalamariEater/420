@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Menu Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\optionsManager.cs" />
      <Compile Include="Assets\Scripts\Menu Scripts\PauseGame.cs" />
+     <Compile Include="Assets\Scripts\Menu Scripts\tutorialScript.cs" />
      <Compile Include="Assets\Scripts\movingPlatform.cs" />
      <Compile Include="Assets\Scripts\Pew.cs" />
      <Compile Include="Assets\Scripts\platform.cs" />
