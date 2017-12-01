@@ -90,10 +90,9 @@ public class BaddiePatrol: MonoBehaviour {	//TODO: Inherit Body class?? e.g code
 		RaycastHit2D hit = Physics2D.Linecast(cliffStart, cliffEnd);
 
 		if (hit) {
-			// Do nothing
+			// No cliff detected yet - do nothing
 		} else {
-			toTheRight = true;
-			//Debug.Log ("To the windoooooOOOoOOoW");
+			toTheRight = true; // nothing hit - change direction - one direction
 		}
 
 		// Determine if right side is cliff ~ could've used empty objects

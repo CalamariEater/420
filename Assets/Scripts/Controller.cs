@@ -22,15 +22,25 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	private SpriteRenderer spr;
 
 	// For Jump Raycast
+	private int LayerGround;
+	public float yOffset = 0.06f; // Offset for baddie sprite - start of raycast
+	public bool onGround = false;
+	private Vector2 groundStart;	// For jump raycast
+	private Vector2 groundEnd;	// For jump raycast
+	public float groundEndDist = 0.1f;	// distance of raycast
 
+	private bool isgrund;
+
+	// Object point jump
+	/*
 	[SerializeField]
 	public Transform[] groundPoint;
 	[SerializeField]
 	public float groundRadius;
 	[SerializeField]
 	public LayerMask whatIsGround;
-	private bool isgrund;
 
+	*/
 
 
 	// Bullet Stuff
@@ -51,6 +61,23 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	private Vector3 lastPlatformVelocity;
 
 	private bool IsGrounded(){
+
+		// Set/update Raycast line
+		groundStart = transform.position; // set ground start at origin of player
+		groundStart.y -= yOffset; // offset start to be at bottom of player
+		groundEnd = groundStart; // set ground end to bottom of player
+		groundEnd.y -= groundEndDist; // offset based on the distance we want
+
+		Debug.DrawLine(groundStart, groundEnd, Color.blue); // debug
+		RaycastHit2D hit = Physics2D.Linecast(groundStart, groundEnd); // Create the linecast
+
+		if (hit) {
+			return true;
+		}
+		return false;
+
+
+		/*
 		if (rb.velocity.y <= 0) {
 			foreach (Transform point in groundPoint) {
 				Collider2D[] colliders = Physics2D.OverlapCircleAll (point.position, groundRadius, whatIsGround);
@@ -63,8 +90,11 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 					}
 				}
 			}
-		}
-		return false;
+			return false;
+		}*/
+
+
+
 	}
 
 	// Use this for initialization
@@ -188,7 +218,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 				rb.AddForce (new Vector2(0,jump));
 				jumps++;
-				Debug.Log ("DOOOUBLE JUMP");
+				//Debug.Log ("DOOOUBLE JUMP");
 			} 
 		}
 	}

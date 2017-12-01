@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212922566936148660}
   - component: {fileID: 61209669191663460}
   - component: {fileID: 252614919696024696}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: stickywall
   m_TagString: stickywall
   m_Icon: {fileID: 0}

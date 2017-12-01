@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61951339022525466}
   - component: {fileID: 251010867505311452}
   - component: {fileID: 114941100891982154}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: fancy_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
