@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\CombatMusicControl.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\fadingPlatform.cs" />
+    <Compile Include="Assets\Scripts\HPBar.cs" />
     <Compile Include="Assets\Scripts\levelTrigger.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\audioManager.cs" />
     <Compile Include="Assets\Scripts\Menu Scripts\ButtonManager.cs" />
