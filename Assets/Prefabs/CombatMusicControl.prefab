@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224549245016263304}
   - component: {fileID: 82984395913076202}
+  - component: {fileID: 114513797209762640}
   m_Layer: 5
   m_Name: CombatMusicControl
   m_TagString: Untagged
@@ -38,7 +39,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fe5634815201e92468740f7d20b57a8c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.5964846
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -107,6 +108,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114513797209762640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1391011544137398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f0449548b6e45f3984e37931f474c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 82984395913076202}
 --- !u!224 &224549245016263304
 RectTransform:
   m_ObjectHideFlags: 1
