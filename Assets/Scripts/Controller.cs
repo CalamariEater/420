@@ -31,8 +31,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	private bool isgrund;
 
-	// Object point jump
-	/*
+    // Object point jump
+    /*
 	[SerializeField]
 	public Transform[] groundPoint;
 	[SerializeField]
@@ -42,6 +42,12 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	*/
 
+    // Sounds
+    public AudioClip shootSound;
+
+    private AudioSource source;
+    private float volLowRange = .5f;
+    private float volHighRange = 1.0f;
 
 	// Bullet Stuff
 	public GameObject pewPrefab; // What it shoots
@@ -104,6 +110,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		spr = GetComponent<SpriteRenderer>();
         defaultColor = spr.color;
 		rb.freezeRotation = true;
+        source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -229,11 +236,14 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			//Debug.Log ("PEW");
 			//StopCoroutine (shootLeft ());
 			StartCoroutine (shootLeft ()); // Allows fire rate
+            source.PlayOneShot(shootSound, .5F);
 		} else if (Input.GetKey (KeyCode.RightArrow) && allowFire) {
 			StartCoroutine (shootRight ());
-		} else if (Input.GetKey (KeyCode.UpArrow) && allowFire) {
+            source.PlayOneShot(shootSound, .5F);
+        } else if (Input.GetKey (KeyCode.UpArrow) && allowFire) {
 			StartCoroutine (shootUp ());
-		}
+            source.PlayOneShot(shootSound, .5F);
+        }
 	}
 
 	IEnumerator shootLeft() {
