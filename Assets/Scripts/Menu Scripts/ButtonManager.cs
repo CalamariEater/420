@@ -12,6 +12,10 @@ public class ButtonManager : MonoBehaviour{
 		SceneManager.LoadScene(newGameLevel);
 	}
 
+	public void TutorialBtn(string newGameLevel){
+		SceneManager.LoadScene(newGameLevel);
+	}
+
 	public void OptionsBtn(string newGameLevel){
 		//PlayerPrefs.SetInt("previousLevel", Application.loadedLevel);
 		//SceneManager.LoadScene(newGameLevel);

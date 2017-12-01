@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controller.cs">
     <Files>
       <File FileName="Assets/Scripts/movingPlatform.cs" Line="38" Column="39" />
@@ -7,6 +8,11 @@
       <File FileName="Assets/Scripts/BaddieFly.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BaddieFollow.cs" Line="14" Column="12" />
       <File FileName="Assets/Scripts/BaddiePatrol.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Menu Scripts/optionsManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Menu Scripts/optionsManager.cs" Line="28" Column="11" />
+>>>>>>> Semi-Finished
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
