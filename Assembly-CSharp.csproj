@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HPBar.cs" />
      <Compile Include="Assets\Scripts\BaddieFly.cs" />
      <Compile Include="Assets\Scripts\BaddieFollow.cs" />
      <Compile Include="Assets\Scripts\BaddieKeepAway.cs" />
