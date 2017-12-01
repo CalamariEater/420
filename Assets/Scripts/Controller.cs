@@ -44,6 +44,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
     // Sounds
     public AudioClip shootSound;
+    public AudioClip bounceSound;
 
     private AudioSource source;
     private float volLowRange = .5f;
@@ -135,51 +136,62 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "baddieBod") { // Check if baddie made collision
-			Debug.Log ("ow");
-			StartCoroutine(flicker (2));
 
-			// HP stuff
-			hp--; // depending on damage of attack change this
-			if (hp <= 0) { // Death
-                           //	Destroy(gameObject);
+        if (coll.gameObject.tag == "baddieBod")
+        { // Check if baddie made collision
+            Debug.Log("ow");
+            StartCoroutine(flicker(2));
+
+            // HP stuff
+            hp--; // depending on damage of attack change this
+            if (hp <= 0)
+            { // Death
+              //	Destroy(gameObject);
                 Application.LoadLevel(Application.loadedLevel);
 
             }
 
             // Knockback
             var force = transform.position - coll.transform.position;
-			force.Normalize ();
-			rb.AddForce (force * knockBack);
-		}
-
-		if (coll.gameObject.tag == "trampoline") { // Check if baddie made collision
-			jumps = jumpLimit;
-			Vector2 v = rb.velocity;
-			v.y = 0.0f;	
-			rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
-			rb.AddForce (new Vector2(0,400.0f));
-
-		}
-
-		if (coll.gameObject.tag == "stickywall") { // Check if baddie made collision
-
-			jumps = 0;
-
-		}
-			
-		if ((coll.gameObject.tag == "movingPlatform") || (coll.gameObject.tag == "pushableBlock")) {
-			transform.SetParent (coll.transform);
-		}
-
-        if (coll.gameObject.tag == "death") // if you fall off and hit platform of doom
-        {
-            Application.LoadLevel(Application.loadedLevel);
+            force.Normalize();
+            rb.AddForce(force * knockBack);
         }
+        else
+        {
+            source.PlayOneShot(bounceSound, .5F);
 
-        if (coll.gameObject.tag == "cup") {
-			
-		}
+            if (coll.gameObject.tag == "trampoline")
+            { // Check if baddie made collision
+                jumps = jumpLimit;
+                Vector2 v = rb.velocity;
+                v.y = 0.0f;
+                rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
+                rb.AddForce(new Vector2(0, 400.0f));
+
+            }
+
+            if (coll.gameObject.tag == "stickywall")
+            { // Check if baddie made collision
+
+                jumps = 0;
+
+            }
+
+            if ((coll.gameObject.tag == "movingPlatform") || (coll.gameObject.tag == "pushableBlock"))
+            {
+                transform.SetParent(coll.transform);
+            }
+
+            if (coll.gameObject.tag == "death") // if you fall off and hit platform of doom
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+
+            if (coll.gameObject.tag == "cup")
+            {
+
+            }
+        }
 		// Add more cases based on tag (damage taken)
 	}
 
