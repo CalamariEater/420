@@ -1839,6 +1839,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 5
 =======
   m_RootOrder: 7
@@ -1849,6 +1850,9 @@ Transform:
 =======
   m_RootOrder: 5
 >>>>>>> parent of 9c250cc... Merge branch 'fked-up' of https://github.com/CalamariEater/420 into fked-up
+=======
+  m_RootOrder: 5
+>>>>>>> parent of 73cf42f... added another power up and level
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &616134873
 Prefab:
