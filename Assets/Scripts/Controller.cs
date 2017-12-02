@@ -45,6 +45,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
     // Sounds
     public AudioClip shootSound;
     public AudioClip bounceSound;
+    public AudioClip jumpSound;
+    public AudioClip trampolineSound;
 
     private AudioSource source;
     private float volLowRange = .5f;
@@ -159,6 +161,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
             if (coll.gameObject.tag == "trampoline")
             { // Check if baddie made collision
+                source.PlayOneShot(trampolineSound, .8F);
                 jumps = jumpLimit;
                 Vector2 v = rb.velocity;
                 v.y = 0.0f;
@@ -220,7 +223,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		// Jump
 		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown(KeyCode.Space))  {
 			Debug.Log ("JUMP pressed");
-			if (isgrund) {
+            source.PlayOneShot(jumpSound, .8F);
+            if (isgrund) {
 				Debug.Log ("isground");
 				isgrund = false;
 				jumps = 0;

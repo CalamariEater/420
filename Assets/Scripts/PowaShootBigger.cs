@@ -7,10 +7,11 @@ public class PowaShootBigger : MonoBehaviour {
     private int LayerPlayer;
     private GameObject thePlayer;
     private Controller playerScript; // To change any values on player
-    public float bulletSize = 0.2f;        
-	
+    public float bulletSize = 0.2f;
+    public float pewDespawnRate = 2.0f;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         LayerPlayer = LayerMask.NameToLayer("Player");
         thePlayer = GameObject.Find("Player");
         playerScript = thePlayer.GetComponent<Controller>();
@@ -28,6 +29,7 @@ public class PowaShootBigger : MonoBehaviour {
             Debug.Log("SHOOT BIG");
             Destroy(gameObject);
             playerScript.bulletSize *= 2;
+            playerScript.pewDespawnRate = 1.0f;
         }
     }
 }
