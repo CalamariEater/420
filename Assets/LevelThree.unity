@@ -1589,7 +1589,7 @@ Prefab:
     - target: {fileID: 114871303341272402, guid: 6de20d41dec0d463998d5dd67a7a6ed1,
         type: 2}
       propertyPath: level
-      value: Win
+      value: LevelVid4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de20d41dec0d463998d5dd67a7a6ed1, type: 2}
@@ -2311,12 +2311,16 @@ Prefab:
     - target: {fileID: 224768463555846864, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+      value: 328.5
+=======
       value: 502
+>>>>>>> 1ea76c5a65499a7bde692506d4874df6626451f5
       objectReference: {fileID: 0}
     - target: {fileID: 224768463555846864, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 258.5
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 224413673886332832, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}

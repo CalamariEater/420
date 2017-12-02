@@ -7,10 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Menu.unity
-    guid: 3af4211b7c1fb4d69a5c39b8541555a0
-  - enabled: 0
-    path: 
-    guid: d799e5221c8554abaa12830392fc861c
+    guid: d96305f2cf3d49943ad0782fd18b073f
   - enabled: 1
     path: Assets/LevelOne.unity
     guid: 62418ba5b263c40a48fc6829886199c4
@@ -24,8 +21,38 @@ EditorBuildSettings:
     path: Assets/LevelThree.unity
     guid: 8331e16d4c6b56441a9c204188503323
   - enabled: 1
-    path: Assets/Tutorial.unity
-    guid: b4e51177f34624f019eb396c43f70b7d
-  - enabled: 1
+    path: Assets/LevelSnakeEater 1.unity
+    guid: aaf6cfc767fc1e446ba316eb4e23b61c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Win.unity
     guid: 42f7d4289ffd8fa42875ef68feffe4e9
+  - enabled: 1
+    path: Assets/startVid.unity
+    guid: 1449cdc146fd2e147965b7b87d2b825b
+  - enabled: 1
+    path: Assets/LevelVid.unity
+    guid: 200aebc6ab9824a4d83f601d212c8833
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/6384371f8e070634ebc001feeb58f4b6
+    guid: 6384371f8e070634ebc001feeb58f4b6
+  - enabled: 1
+    path: Assets/LevelBasil.unity
+    guid: 970423e00f30e414db6d420c95b9ff92
+  - enabled: 1
+    path: Assets/LevelVid2.unity
+    guid: 8ecdf8836cd35334e86cb37e8c11eb78
+  - enabled: 1
+    path: Assets/LevelVid3.unity
+    guid: 7fa1a6f3e56c29d4eb5f3fe8fbf65aef
+  - enabled: 1
+    path: Assets/LevelVid4.unity
+    guid: 458cf4a6f4e382a468d9779079486072
+  - enabled: 1
+    path: Assets/Tutorial.unity
+    guid: 7251e5efd11b96244a3a77ce4e0d28e5
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
