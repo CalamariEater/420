@@ -1,16 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Tutorial.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Menu.unity
-=======
-<<<<<<< HEAD
-- path: Assets/LevelBasil.unity
-=======
-- path: Assets/startVid.unity
->>>>>>> db69670c31c2111a0fa59bd96f553ed970480912
->>>>>>> c1d8f09b820577dcafb042df9363f8cde6db3a8b
->>>>>>> 611d09aebdd4084f5351100dadc06e6c04ceed84
   isLoaded: 1
   isActive: 1
