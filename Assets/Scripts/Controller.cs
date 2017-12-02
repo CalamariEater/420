@@ -62,10 +62,9 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
 	public float bulletSize = 0.2f;
 
-	private Transform activePlatform;
-	private Vector3 activeLocalPlatformPoint;
-	private Vector3 activeGlobalPlatformPoint;
-	private Vector3 lastPlatformVelocity;
+	// Knockback control
+	public bool isKnockedBack = false;
+	public float controlGain = .75f; // how much control player gets
 
 	private bool IsGrounded(){
 
@@ -83,7 +82,6 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		}
 		return false;
 
-
 		/*
 		if (rb.velocity.y <= 0) {
 			foreach (Transform point in groundPoint) {
@@ -99,8 +97,6 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			}
 			return false;
 		}*/
-
-
 
 	}
 
@@ -147,11 +143,12 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
             if (hp <= 0)
             { // Death
               //	Destroy(gameObject);
-                Application.LoadLevel(Application.loadedLevel);
+                Application.LoadLevel(Application.loadedLevel); 
 
             }
 
             // Knockback
+			isKnockedBack = true;
             var force = transform.position - coll.transform.position;
             force.Normalize();
             rb.AddForce(force * knockBack);
@@ -234,6 +231,12 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 			if (jumps < jumpLimit) {
 				Vector2 v = rb.velocity;
 				v.y = 0.0f;	
+
+				if (isKnockedBack) { // Give some control back to player
+					v.x = rb.velocity.x * controlGain;
+					isKnockedBack = false;
+				}
+
 				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 				rb.AddForce (new Vector2(0,jump));
 				jumps++;
