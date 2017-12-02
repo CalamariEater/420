@@ -195,7 +195,7 @@ RectTransform:
   m_GameObject: {fileID: 13500264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.07, y: -1, z: 90}
-  m_LocalScale: {x: 0.016325768, y: 0.016325768, z: 0.016325768}
+  m_LocalScale: {x: 0.019539904, y: 0.019539904, z: 0.019539904}
   m_Children:
   - {fileID: 1427095858}
   m_Father: {fileID: 0}
@@ -249,6 +249,11 @@ Prefab:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114713180585883964, guid: a9057a3bdc3c843988de1048b9a4a8a7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1427095858}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9057a3bdc3c843988de1048b9a4a8a7, type: 2}
   m_IsPrefabParent: 0
@@ -399,4 +404,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movie: {fileID: 15200000, guid: e534f4cc9443b9846a01e35706ad6a7c, type: 3}
-  level: LevelSnakeEater 1
+  level: LevelTwo
