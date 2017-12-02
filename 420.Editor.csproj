@@ -249,13 +249,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="420.Plugins.csproj">
-      <Project>{896175A6-5F27-ED4F-7282-7C8E2CD55768}</Project>
-      <Name>420.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="420.csproj">
       <Project>{3E0EA61B-6F75-7C1A-BA93-0F377D05E11E}</Project>
       <Name>420</Name>
+    </ProjectReference>
+    <ProjectReference Include="420.Plugins.csproj">
+      <Project>{896175A6-5F27-ED4F-7282-7C8E2CD55768}</Project>
+      <Name>420.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

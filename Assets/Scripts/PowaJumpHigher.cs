@@ -27,9 +27,9 @@ public class PowaJumpHigher : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("WE FLYIN");
+            playerScript.jump += jump;
             Destroy(gameObject);
-            playerScript.jump += 50.0f;
+            Debug.Log(jump);
         }
     }
 }
