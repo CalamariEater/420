@@ -319,6 +319,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		allowFire = true;
 	}
 
+	// For flicker effect
 	IEnumerator flicker(int blink){
 		for (int i = 0; i < blink; i++) {
 			spr.color = Color.red;
