@@ -236,12 +236,14 @@
     <Compile Include="Assets\Scripts\Pew.cs" />
     <Compile Include="Assets\Scripts\platform.cs" />
     <Compile Include="Assets\Scripts\PowaFireFast.cs" />
+    <Compile Include="Assets\Scripts\PowaHeal.cs" />
     <Compile Include="Assets\Scripts\PowaJumpHigher.cs" />
     <Compile Include="Assets\Scripts\PowaJumpMore.cs" />
     <Compile Include="Assets\Scripts\PowaShootBigger.cs" />
     <Compile Include="Assets\Scripts\PowaShootFaster.cs" />
     <Compile Include="Assets\Scripts\PowaShootHarder.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\results.cs" />
     <Compile Include="Assets\Scripts\StreamVideo.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
   </ItemGroup>

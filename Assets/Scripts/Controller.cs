@@ -45,6 +45,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
     // Sounds
     public AudioClip shootSound;
     public AudioClip bounceSound;
+    public AudioClip jumpSound;
+    public AudioClip trampolineSound;
 
     private AudioSource source;
     private float volLowRange = .5f;
@@ -159,6 +161,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 
             if (coll.gameObject.tag == "trampoline")
             { // Check if baddie made collision
+                source.PlayOneShot(trampolineSound, .8F);
                 jumps = jumpLimit;
                 Vector2 v = rb.velocity;
                 v.y = 0.0f;
@@ -220,9 +223,11 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		// Jump
 		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown(KeyCode.Space))  {
 			Debug.Log ("JUMP pressed");
-			if (isgrund) {
+            
+            if (isgrund) {
 				Debug.Log ("isground");
-				isgrund = false;
+                source.PlayOneShot(jumpSound, .8F);
+                isgrund = false;
 				jumps = 0;
 			} else {
 				Debug.Log ("not ground");
@@ -240,8 +245,9 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 				rb.AddForce (new Vector2(0,jump));
 				jumps++;
-				//Debug.Log ("DOOOUBLE JUMP");
-			} 
+                source.PlayOneShot(jumpSound, .8F);
+                //Debug.Log ("DOOOUBLE JUMP");
+            } 
 		}
 	}
 		

@@ -9,11 +9,13 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        timerText.text = "Text: " + PlayerPrefs.GetFloat("currTime");
+        timerText.text = "Seconds: " + PlayerPrefs.GetFloat("currTime").ToString("F2");
     }
 	
 	// Update is called once per frame
 	void Update () {
-        timerText.text = "Text: " + PlayerPrefs.GetFloat("currTime");
+        timerText.text = "Seconds: " + PlayerPrefs.GetFloat("currTime").ToString("F2");
     }
+
+ 
 }

@@ -269,8 +269,10 @@ MonoBehaviour:
   yOffset: 0.06
   onGround: 0
   groundEndDist: 0.1
-  shootSound: {fileID: 8300000, guid: b9046c0867c845d4ba326d396e5913a9, type: 3}
+  shootSound: {fileID: 8300000, guid: 5ef0990dff8d84ab1813dcb1d4b17478, type: 3}
   bounceSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: d43b4245f7481df479fbfd49285508e5, type: 3}
+  trampolineSound: {fileID: 8300000, guid: 1b4e0307c0d5b0546acc9fd189cd7eec, type: 3}
   pewPrefab: {fileID: 1819745856926766, guid: 5d76094c1ca784284916f335c271878e, type: 2}
   pewSpawnLeft: {fileID: 4801972836181656}
   pewSpawnRight: {fileID: 4652742168086576}
@@ -291,7 +293,6 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -307,7 +308,6 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
