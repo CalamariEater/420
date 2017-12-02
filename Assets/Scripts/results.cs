@@ -23,7 +23,7 @@ public class results : MonoBehaviour {
         timerText.text = "Your Time: " + PlayerPrefs.GetFloat("currTime").ToString("F2");
         highscore.text = "Fastest Time: " + PlayerPrefs.GetFloat("highscore").ToString("F2");
 
-        if (current >= fastest) {
+        if (current <= fastest) {
             newscore.text = "New fastest time!!!!";
             fastest = current;
         }

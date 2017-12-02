@@ -8,7 +8,7 @@ public class ButtonManager : MonoBehaviour{
 
 	void Start () {
 		Time.timeScale = 1; //starts time should start game.
-        PlayerPrefs.SetFloat("highscore", 1.0f);
+        //PlayerPrefs.SetFloat("highscore", 0f);
     }
 
 	public void NewGameBtn(string newGameLevel){
