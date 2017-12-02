@@ -273,6 +273,8 @@ MonoBehaviour:
   bounceSound: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: a3d066da9d4c19f42b48443e2000038c, type: 3}
   trampolineSound: {fileID: 8300000, guid: 1b4e0307c0d5b0546acc9fd189cd7eec, type: 3}
+  damageSound: {fileID: 8300000, guid: f0806c6e0c41d8b4ebdcef2ba9feb837, type: 3}
+  powerupSound: {fileID: 8300000, guid: adf33ba5e4b3d7646a44f29c3193e93a, type: 3}
   pewPrefab: {fileID: 1819745856926766, guid: 5d76094c1ca784284916f335c271878e, type: 2}
   pewSpawnLeft: {fileID: 4801972836181656}
   pewSpawnRight: {fileID: 4652742168086576}
