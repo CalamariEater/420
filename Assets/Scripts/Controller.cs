@@ -47,6 +47,8 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
     public AudioClip bounceSound;
     public AudioClip jumpSound;
     public AudioClip trampolineSound;
+    public AudioClip damageSound;
+    public AudioClip powerupSound;
 
     private AudioSource source;
     private float volLowRange = .5f;
@@ -138,6 +140,7 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
         if (coll.gameObject.tag == "baddieBod")
         { // Check if baddie made collision
             Debug.Log("ow");
+            source.PlayOneShot(damageSound, .8F);
             StartCoroutine(flicker(2));
 
             // HP stuff

@@ -7,7 +7,7 @@ public class PowaJumpHigher : MonoBehaviour
     private int LayerPlayer;
     private GameObject thePlayer;
     private Controller playerScript; // To change any values on player
-    public float jump = 200.0f;  // jump force
+    public float jump = 50f;  // jump force
 
     // Use this for initialization
     void Start()
