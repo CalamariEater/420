@@ -700,6 +700,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de20d41dec0d463998d5dd67a7a6ed1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &752614649
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681157457835472, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 547cb0080d161854da6f7dc8a45ae1b3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &769439569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,6 +1063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSize: 0
+  pewDespawnRate: 2
 --- !u!58 &1047301157
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1249,6 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSize: 0
+  pewDespawnRate: 2
 --- !u!58 &1271007814
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1503,7 +1547,7 @@ Prefab:
     - target: {fileID: 224413673886332832, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224257227978135704, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
@@ -1737,6 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSize: 0
+  pewDespawnRate: 2
 --- !u!58 &1927737676
 CircleCollider2D:
   m_ObjectHideFlags: 0

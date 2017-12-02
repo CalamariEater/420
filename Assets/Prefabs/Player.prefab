@@ -269,9 +269,9 @@ MonoBehaviour:
   yOffset: 0.06
   onGround: 0
   groundEndDist: 0.1
-  shootSound: {fileID: 8300000, guid: 5ef0990dff8d84ab1813dcb1d4b17478, type: 3}
+  shootSound: {fileID: 8300000, guid: 13d9ed5d2aed84f4984207646cc81716, type: 3}
   bounceSound: {fileID: 0}
-  jumpSound: {fileID: 8300000, guid: d43b4245f7481df479fbfd49285508e5, type: 3}
+  jumpSound: {fileID: 8300000, guid: a3d066da9d4c19f42b48443e2000038c, type: 3}
   trampolineSound: {fileID: 8300000, guid: 1b4e0307c0d5b0546acc9fd189cd7eec, type: 3}
   pewPrefab: {fileID: 1819745856926766, guid: 5d76094c1ca784284916f335c271878e, type: 2}
   pewSpawnLeft: {fileID: 4801972836181656}

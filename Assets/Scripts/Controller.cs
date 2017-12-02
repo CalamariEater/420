@@ -223,10 +223,11 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 		// Jump
 		if (Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown(KeyCode.Space))  {
 			Debug.Log ("JUMP pressed");
-            source.PlayOneShot(jumpSound, .8F);
+            
             if (isgrund) {
 				Debug.Log ("isground");
-				isgrund = false;
+                source.PlayOneShot(jumpSound, .8F);
+                isgrund = false;
 				jumps = 0;
 			} else {
 				Debug.Log ("not ground");
@@ -244,8 +245,9 @@ public class Controller : MonoBehaviour {	//TODO: Inherit Body class?? e.g code 
 				rb.velocity = v; // Set Y velocity to 0 ~ avoids spam jump high af bug
 				rb.AddForce (new Vector2(0,jump));
 				jumps++;
-				//Debug.Log ("DOOOUBLE JUMP");
-			} 
+                source.PlayOneShot(jumpSound, .8F);
+                //Debug.Log ("DOOOUBLE JUMP");
+            } 
 		}
 	}
 		

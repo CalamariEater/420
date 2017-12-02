@@ -199,8 +199,17 @@
     <Reference Include="UnityEngine.Timeline">
       <HintPath>Library\UnityAssemblies\UnityEngine.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UIAutomation">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UIAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>Library\UnityAssemblies\UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
@@ -216,6 +225,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\playVid.cs" />
     <Compile Include="Assets\Scripts\BaddieFly.cs" />
     <Compile Include="Assets\Scripts\BaddieFollow.cs" />
     <Compile Include="Assets\Scripts\BaddieKeepAway.cs" />
