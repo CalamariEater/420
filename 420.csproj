@@ -242,10 +242,7 @@
     <Compile Include="Assets\Scripts\PowaShootHarder.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\StreamVideo.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Timer.cs" />
-=======
->>>>>>> 76ab3decc47be05dfaba66a202d3190c0a004512
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
