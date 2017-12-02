@@ -729,6 +729,21 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 918741321}
+    - target: {fileID: 20510725849976768, guid: a9057a3bdc3c843988de1048b9a4a8a7,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.891
+      objectReference: {fileID: 0}
+    - target: {fileID: 20510725849976768, guid: a9057a3bdc3c843988de1048b9a4a8a7,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.64086485
+      objectReference: {fileID: 0}
+    - target: {fileID: 20510725849976768, guid: a9057a3bdc3c843988de1048b9a4a8a7,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.34722793
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9057a3bdc3c843988de1048b9a4a8a7, type: 2}
   m_IsPrefabParent: 0
@@ -963,7 +978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &350489485
 Prefab:
@@ -1692,7 +1707,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &616134873
 Prefab:

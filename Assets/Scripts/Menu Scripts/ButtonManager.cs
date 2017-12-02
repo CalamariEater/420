@@ -4,9 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour{
 
+    
+
 	void Start () {
 		Time.timeScale = 1; //starts time should start game.
-	}
+        PlayerPrefs.SetFloat("highscore", 1.0f);
+    }
 
 	public void NewGameBtn(string newGameLevel){
         PlayerPrefs.SetFloat("currTime", 0f); // reset running time

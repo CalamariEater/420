@@ -15,7 +15,7 @@ public class results : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        //PlayerPrefs.SetFloat("highscore", 0f); cleared player prefs
+        //PlayerPrefs.SetFloat("highscore", 0f); //cleared player prefs
 
         float current = PlayerPrefs.GetFloat("currTime");
         float fastest = PlayerPrefs.GetFloat("highscore");
