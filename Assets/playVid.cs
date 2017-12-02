@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class playVid : MonoBehaviour {
 
 	public MovieTexture movie;
-    public string level;
+    public string level = "LevelOne";
 
 	// Use this for initialization
 	void Start () {
