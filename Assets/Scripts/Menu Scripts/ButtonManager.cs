@@ -9,6 +9,7 @@ public class ButtonManager : MonoBehaviour{
 	}
 
 	public void NewGameBtn(string newGameLevel){
+        PlayerPrefs.SetFloat("currTime", 0f); // reset running time
 		SceneManager.LoadScene(newGameLevel);
 	}
 
