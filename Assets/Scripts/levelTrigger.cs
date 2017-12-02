@@ -6,6 +6,7 @@ public class levelTrigger : MonoBehaviour {
 
 	// Time stuff
 	public float currTime = 0f;
+    public bool trackTime = true; // toggle to track time if needed
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +16,11 @@ public class levelTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currTime += Time.deltaTime; // Inc time
-        PlayerPrefs.SetFloat("currTime", currTime);
+        if (trackTime)
+        {
+            currTime += Time.deltaTime; // Inc time
+            PlayerPrefs.SetFloat("currTime", currTime);
+        }
 	}
 
 	[SerializeField]

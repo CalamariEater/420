@@ -14,7 +14,8 @@ public class ButtonManager : MonoBehaviour{
 	}
 
 	public void TutorialBtn(string newGameLevel){
-		SceneManager.LoadScene(newGameLevel);
+        PlayerPrefs.SetFloat("currTime", 0f); // reset running time
+        SceneManager.LoadScene(newGameLevel);
 	}
 
 	public void OptionsBtn(string newGameLevel){
