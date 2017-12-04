@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Menu.unity
-=======
-- path: Assets/LevelSnakeEater 1.unity
->>>>>>> 4edfecee18c0afb6326420cc3baa424289485a2e
+- path: Assets/Win.unity
   isLoaded: 1
   isActive: 1

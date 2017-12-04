@@ -1140,7 +1140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &389598843
 Prefab:
@@ -1589,7 +1589,7 @@ Prefab:
     - target: {fileID: 114871303341272402, guid: 6de20d41dec0d463998d5dd67a7a6ed1,
         type: 2}
       propertyPath: level
-      value: Win
+      value: LevelVid4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de20d41dec0d463998d5dd67a7a6ed1, type: 2}
@@ -2311,12 +2311,12 @@ Prefab:
     - target: {fileID: 224768463555846864, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 502
+      value: 569
       objectReference: {fileID: 0}
     - target: {fileID: 224768463555846864, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 258.5
+      value: 262.5
       objectReference: {fileID: 0}
     - target: {fileID: 224413673886332832, guid: ee712cb9008653f4cb8e64ada029b2cf,
         type: 2}
